@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veille Technologique — 19 juin 2026</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #1a1a2e;
+      background: #f5f6fa;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      color: #fff;
+      padding: 2rem 2.5rem;
+    }
+    header h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.3rem; }
+    header .meta { font-size: 0.9rem; color: #a8b2d8; }
+    header .perimeter {
+      display: inline-block;
+      margin-top: 0.8rem;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 20px;
+      padding: 0.25rem 0.8rem;
+      font-size: 0.82rem;
+      color: #c8d3f5;
+    }
+
+    main { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+    /* Alert banner */
+    .alert-banner {
+      background: #fff3cd;
+      border-left: 4px solid #e6a817;
+      border-radius: 6px;
+      padding: 0.8rem 1.2rem;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+    }
+    .alert-banner strong { color: #856404; }
+
+    section {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      padding: 1.5rem 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #16213e;
+      border-bottom: 2px solid #e8eaf0;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.2rem;
+    }
+    h2 .domain-num {
+      display: inline-block;
+      background: #16213e;
+      color: #fff;
+      border-radius: 50%;
+      width: 1.6rem;
+      height: 1.6rem;
+      font-size: 0.78rem;
+      line-height: 1.6rem;
+      text-align: center;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+    }
+
+    h3 {
+      font-size: 0.97rem;
+      font-weight: 600;
+      color: #0f3460;
+      margin: 1rem 0 0.3rem;
+    }
+
+    p { margin-bottom: 0.6rem; }
+
+    /* Signal badges */
+    .signal {
+      display: inline-block;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.15rem 0.55rem;
+      margin-left: 0.4rem;
+      vertical-align: middle;
+    }
+    .signal-radar { background: #e8f4fd; color: #0369a1; border: 1px solid #bae6fd; }
+    .signal-alert { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
+
+    /* Callout boxes */
+    .callout {
+      border-radius: 6px;
+      padding: 0.7rem 1rem;
+      margin: 0.6rem 0;
+      font-size: 0.9rem;
+    }
+    .callout-radar {
+      background: #eff6ff;
+      border-left: 3px solid #3b82f6;
+      color: #1e40af;
+    }
+    .callout-alert {
+      background: #fff1f2;
+      border-left: 3px solid #f43f5e;
+      color: #be123c;
+    }
+    .callout-action {
+      background: #f0fdf4;
+      border-left: 3px solid #22c55e;
+      color: #15803d;
+    }
+
+    /* Summary table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin-top: 0.8rem;
+    }
+    th {
+      background: #16213e;
+      color: #fff;
+      text-align: left;
+      padding: 0.6rem 0.8rem;
+      font-weight: 600;
+    }
+    td { padding: 0.55rem 0.8rem; border-bottom: 1px solid #e8eaf0; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: #f8f9fc; }
+
+    .priority-urgent { color: #dc2626; font-weight: 700; }
+    .priority-medium { color: #d97706; font-weight: 600; }
+    .priority-low { color: #16a34a; }
+
+    /* Sources */
+    .sources-list { list-style: none; padding: 0; }
+    .sources-list li { padding: 0.3rem 0; border-bottom: 1px solid #f0f0f0; }
+    .sources-list li:last-child { border-bottom: none; }
+    .sources-list a { color: #0369a1; text-decoration: none; font-size: 0.88rem; }
+    .sources-list a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      color: #9ca3af;
+      font-size: 0.82rem;
+      padding: 2rem 1.5rem;
+    }
+
+    code {
+      background: #f1f5f9;
+      border-radius: 3px;
+      padding: 0.1rem 0.35rem;
+      font-size: 0.88em;
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      color: #0f3460;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Veille Technologique</h1>
+  <div class="meta">Générée le <strong>19 juin 2026</strong> · par Claude Code</div>
+  <span class="perimeter">📅 Périmètre : 5 – 19 juin 2026 (2 semaines)</span>
+</header>
+
+<main>
+
+  <!-- Alert banner -->
+  <div class="alert-banner">
+    ⚠️ <strong>3 alertes sécurité cette semaine</strong> — CVE CVSS 9.9 sur LiteLLM, vulnérabilité MCP Anthropic (RCE), premiers CVEs high-severity sur les AI coding assistants.
+  </div>
+
+  <!-- 1. IA / ML -->
+  <section>
+    <h2><span class="domain-num">1</span> Intelligence Artificielle / ML</h2>
+
+    <h3>Anthropic — Fable 5 preview + Mythos 5 GA <span class="signal signal-radar">🔔 Radar</span></h3>
+    <p>Claude Mythos 5 passe de preview à <strong>General Availability</strong> en juin, avec un raisonnement "vulnerability-aware" ciblé sur les contextes enterprise. Anthropic a tenu son événement <em>Code with Claude</em> (SF, Londres, Tokyo) et annoncé 5 nouvelles features agentiques :</p>
+    <ul style="margin: 0.4rem 0 0.6rem 1.2rem;">
+      <li><strong>Dreaming</strong> — réflexion asynchrone longue durée</li>
+      <li><strong>Outcomes</strong> — évaluation automatique des résultats d'agents</li>
+      <li><strong>Orchestration multi-agent</strong></li>
+      <li><strong>Claude Finance</strong> — 10 agents pré-construits pour la finance</li>
+      <li><strong>Add-ins</strong> — extensions tierces dans Claude</li>
+    </ul>
+    <div class="callout callout-radar">🔔 <strong>Radar :</strong> Claude API est en ADOPT. La GA de Mythos 5 élargit les cas d'usage enterprise — à évaluer pour nos features IA existantes.</div>
+
+    <h3>OpenAI — GPT-5.6 & GPT-5.5 Instant santé</h3>
+    <p>GPT-5.6 sorti selon le calendrier annoncé. GPT-5.5 Instant déployé dans les outils santé de ChatGPT.</p>
+
+    <h3>Explosion des releases LLM</h3>
+    <p>En 2 semaines : <strong>Qwen 3.7, DeepSeek V4.1, Hunyuan Large 3, ERNIE 5.1, Doubao Pro, GLM-6</strong> tous sortis en parallèle. La cadence de 6 semaines entre grandes releases ne montre aucun signe de ralentissement en ce premier semestre 2026.</p>
+
+    <h3>LangChain — Multi-Vector RAG multimodal</h3>
+    <p>Blog post du 3 juin sur le Multi-Vector Retriever (tables, textes, images). LangGraph s'impose comme standard pour les workflows agentiques stateful, avec LangSmith pour le tracing/monitoring RAG en production.</p>
+    <div class="callout callout-radar">🔔 <strong>Radar :</strong> LangChain / LangGraph (ADOPT) — confirme la stabilité. Explorer LangSmith comme couche de monitoring de nos pipelines RAG (alternative ou complément au logging custom).</div>
+  </section>
+
+  <!-- 2. Cloud & Infrastructure -->
+  <section>
+    <h2><span class="domain-num">2</span> Cloud &amp; Infrastructure</h2>
+
+    <h3>AWS EKS — Kubernetes 1.36 disponible (2 juin 2026) <span class="signal signal-alert">⚠️ Action</span></h3>
+    <p>EKS supporte désormais Kubernetes 1.36. <strong>Changement breaking majeur :</strong> le type de volume <code>gitRepo</code> est définitivement désactivé — les pods qui l'utilisent seront refusés par le kubelet (l'API Kubernetes accepte toujours les manifests, mais le kubelet retournera une erreur à l'exécution).</p>
+    <div class="callout callout-alert">⚠️ <strong>Action immédiate :</strong> Scanner tous les manifests Kubernetes pour <code>gitRepo</code> volumes avant toute montée de version vers 1.36.</div>
+
+    <h3>Agentic workloads sur EKS</h3>
+    <p>The New Stack prédit que 2026 sera l'année des workloads agentiques en production sur EKS. Converge avec notre utilisation de Claude API et LangGraph sur nos clusters.</p>
+  </section>
+
+  <!-- 3. Langages & Runtimes -->
+  <section>
+    <h2><span class="domain-num">3</span> Langages &amp; Runtimes</h2>
+
+    <h3>Symfony 8.1 sorti fin mai 2026 — PHP 8.4 obligatoire <span class="signal signal-radar">🔔 Radar</span></h3>
+    <p>Symfony 8.1 exige <strong>PHP 8.4 minimum</strong>. Symfony 8.2 prévu en novembre 2026, même prérequis. L'équipe est aujourd'hui sur Symfony 7.x / PHP 8.3+.</p>
+    <div class="callout callout-radar">🔔 <strong>Radar :</strong> Pas d'urgence en Q2, mais la migration PHP 8.4 doit être inscrite sur la roadmap Q3/Q4 2026 pour ne pas bloquer la montée Symfony 8.x.</div>
+
+    <h3>PHP 8.5 vs 8.4 — performances</h3>
+    <p>Symfony 8.0.7 sur PHP 8.5 est environ <strong>3–5 % plus rapide</strong> que sur PHP 8.4. Le projet PXP (superset PHP expérimental, analogue à TypeScript pour JS) a été archivé — le core PHP evolue plus vite que l'expérimentation externe.</p>
+
+    <h3>TypeScript — n°1 sur GitHub par nombre de contributeurs</h3>
+    <p>Depuis août 2025, TypeScript est le langage le plus utilisé sur GitHub par nombre de contributeurs. La convergence frontend/backend TypeScript est actée, cohérente avec notre ADOPT TypeScript.</p>
+  </section>
+
+  <!-- 4. DevOps & Platform Engineering -->
+  <section>
+    <h2><span class="domain-num">4</span> DevOps &amp; Platform Engineering</h2>
+
+    <h3>OpenTelemetry + GitHub Actions — intégration mature <span class="signal signal-radar">🔔 Signal</span></h3>
+    <p>Des guides détaillés sur l'instrumentation complète des pipelines GitHub Actions via OTel sont publiés (traces par workflow / job / step). Idem pour ArgoCD. Notre stack OpenTelemetry (ADOPT) + GitHub Actions (ADOPT) + ArgoCD (ADOPT) peut bénéficier de cette couche de tracing CI/CD sans outillage tiers supplémentaire.</p>
+    <div class="callout callout-action">✅ <strong>Quick win :</strong> Activer les traces OTel sur nos workflows GitHub Actions pour visualiser les bottlenecks de build dans Grafana (déjà en ADOPT).</div>
+
+    <h3>Tendance 2026 CI/CD — pipelines "intelligents"</h3>
+    <p>Le focus du secteur en 2026 est aux pipelines qui intègrent des gates sécurité et perf <em>avant</em> chaque déploiement — dans la continuité de notre usage de Semgrep (TRIAL) et OWASP ZAP (ADOPT) en CI.</p>
+  </section>
+
+  <!-- 5. Sécurité -->
+  <section>
+    <h2><span class="domain-num">5</span> Sécurité</h2>
+
+    <h3>CVE-2026-47101 — LiteLLM, CVSS 9.9 Critique <span class="signal signal-alert">⚠️ Urgent</span></h3>
+    <p><strong>Authorization bypass :</strong> LiteLLM stocke le champ <code>allowed_routes</code> fourni par l'appelant sans vérification de rôle. La chaîne complète est notée <strong>CVSS 9.9</strong>.</p>
+    <div class="callout callout-alert">⚠️ <strong>Urgent :</strong> Vérifier si LiteLLM est présent dans la stack IA, notamment dans des contextes multi-tenant. Patcher immédiatement si c'est le cas.</div>
+
+    <h3>CVE-2026-54420 — LiteSpeed cPanel Plugin, CVSS 8.5 <span class="signal signal-alert">⚠️ Action</span></h3>
+    <p>Privilege escalation. CISA l'a ajouté au catalogue KEV avec deadline fédérale au <strong>18 juin 2026</strong>. Patchez si LiteSpeed est dans votre périmètre.</p>
+
+    <h3>Vulnérabilité MCP Design — RCE potentiel <span class="signal signal-alert">⚠️ À surveiller</span></h3>
+    <p>Une vulnérabilité de conception dans le protocole MCP d'Anthropic permettrait une exécution de code à distance, menaçant la supply chain IA (<em>The Hacker News</em>, avril 2026).</p>
+    <div class="callout callout-alert">⚠️ <strong>Pertinent :</strong> Si des serveurs MCP sont déployés dans notre infra, surveiller les correctifs Anthropic et appliquer dès disponibilité.</div>
+
+    <h3>AI coding assistants — premiers CVEs high-severity</h3>
+    <p>GitHub Copilot, Cursor, et Claude Code ont enregistré leurs premiers CVEs high-severity. Le <strong>prompt injection</strong> est désormais reconnu comme classe de vulnérabilité légitime avec des scores CVSS > 9.0.</p>
+    <div class="callout callout-radar">🔔 <strong>Signal :</strong> Intégrer des tests de prompt injection dans le pipeline CI pour nos features IA exposées à des inputs utilisateur.</div>
+
+    <h3>Device code phishing — spike ×37</h3>
+    <p>18 kits identifiés, détections multipliées par 37 depuis le 12 juin 2026. Tous les grands fournisseurs AiTM l'ont intégré à leurs plateformes. Sensibiliser l'équipe.</p>
+  </section>
+
+  <!-- 6. Frameworks & Architecture -->
+  <section>
+    <h2><span class="domain-num">6</span> Frameworks &amp; Architecture</h2>
+
+    <h3>Symfony 8.1 — roadmap communauté</h3>
+    <p>La roadmap Symfony est claire : 8.1 LTS est la cible de migration pour les projets actuellement sur 7.x. La communauté (SymfonyCon, AFUP) discute activement de la migration vers PHP 8.4. Aucun breaking change majeur signalé dans les composants que nous utilisons (Messenger, Doctrine, API Platform).</p>
+
+    <h3>React — "Server First" acté comme standard</h3>
+    <p>La transition de "React comme librairie UI" vers "React comme framework applicatif" est complète en 2026. Server Components stabilisés dans React 19, React Compiler v1.0 vu comme standard depuis sa sortie en octobre 2025.</p>
+  </section>
+
+  <!-- 7. Frontend & Expérience Dev -->
+  <section>
+    <h2><span class="domain-num">7</span> Frontend &amp; Expérience Dev</h2>
+
+    <h3>React Compiler v1.0 — memoization automatique <span class="signal signal-radar">🔔 Signal</span></h3>
+    <p>Le React Compiler (sorti octobre 2025) voit son adoption s'accélérer en 2026. <code>useMemo</code>, <code>useCallback</code> et <code>React.memo</code> manuels sont désormais considérés comme du code legacy. La memoization est gérée à la compilation automatiquement.</p>
+    <div class="callout callout-action">✅ <strong>Action :</strong> Activer le React Compiler sur nos projets React 19 pour des gains de performance sans effort de refactoring.</div>
+
+    <h3>Create React App — officiellement déprécié</h3>
+    <p>Le React Core Team ne recommande plus CRA. Alternatives officielles : <strong>Vite</strong>, <strong>Next.js</strong>, <strong>React Router 7</strong> ou <strong>TanStack Start</strong>. Cohérent avec notre adoption de Vite et Bun (TRIAL) en CI.</p>
+  </section>
+
+  <!-- 8. Data & Streaming -->
+  <section>
+    <h2><span class="domain-num">8</span> Data &amp; Streaming</h2>
+
+    <h3>ClickHouse — $15 milliards, acquisition Langfuse, Postgres natif <span class="signal signal-radar">🔔 Radar</span></h3>
+    <p>Gros trimestre pour ClickHouse :</p>
+    <ul style="margin: 0.4rem 0 0.6rem 1.2rem;">
+      <li>Série D à <strong>$400M</strong>, valorisation à <strong>$15 milliards</strong></li>
+      <li>Acquisition de <strong>Langfuse</strong> (observabilité LLM open-source)</li>
+      <li>Lancement d'un <strong>service Postgres natif</strong></li>
+    </ul>
+    <div class="callout callout-radar">🔔 <strong>Radar :</strong> ClickHouse est en TRIAL. L'acquisition de Langfuse crée un pont direct avec notre stack LLM. À explorer pour l'observabilité de nos pipelines RAG — alternative ou complément à LangSmith.</div>
+
+    <h3>Asynchronous inserts ClickHouse (Instaclustr, juin 2026)</h3>
+    <p>Article pratique sur les inserts asynchrones pour stabiliser l'ingestion en workloads streaming haute fréquence. Pertinent pour notre POC analytics dashboard en cours.</p>
+  </section>
+
+  <!-- Tableau récapitulatif -->
+  <section>
+    <h2>📊 Récapitulatif — Signaux Radar</h2>
+    <p style="font-size:0.88rem; color:#6b7280; margin-bottom:0.8rem;">Signaux à discuter lors du prochain Tech Talk ou Brown Bag.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Signal</th>
+          <th>Technologie</th>
+          <th>Mouvement potentiel</th>
+          <th>Priorité</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>CVE CVSS 9.9 LiteLLM</td>
+          <td>Sécurité IA (LiteLLM)</td>
+          <td>Audit immédiat de la stack IA</td>
+          <td class="priority-urgent">⚠️ Urgent</td>
+        </tr>
+        <tr>
+          <td>Kubernetes 1.36 — <code>gitRepo</code> supprimé</td>
+          <td>Kubernetes (ADOPT)</td>
+          <td>Audit manifests avant upgrade EKS</td>
+          <td class="priority-urgent">⚠️ Urgent</td>
+        </tr>
+        <tr>
+          <td>Mythos 5 GA + features agentiques</td>
+          <td>Claude API (ADOPT)</td>
+          <td>Élargir les cas d'usage enterprise</td>
+          <td class="priority-medium">Moyen</td>
+        </tr>
+        <tr>
+          <td>ClickHouse + acquisition Langfuse</td>
+          <td>ClickHouse (TRIAL)</td>
+          <td>Explorer pour observabilité LLM</td>
+          <td class="priority-medium">Moyen</td>
+        </tr>
+        <tr>
+          <td>OTel traces CI/CD</td>
+          <td>OpenTelemetry (ADOPT)</td>
+          <td>Activer traces GitHub Actions → Grafana</td>
+          <td class="priority-medium">Moyen</td>
+        </tr>
+        <tr>
+          <td>Symfony 8.1 → PHP 8.4 obligatoire</td>
+          <td>PHP / Symfony (ADOPT)</td>
+          <td>Planifier migration PHP 8.4 (Q3/Q4)</td>
+          <td class="priority-low">Faible</td>
+        </tr>
+        <tr>
+          <td>React Compiler v1.0 — memoization auto</td>
+          <td>React 19 (ADOPT)</td>
+          <td>Activer compilateur sur projets existants</td>
+          <td class="priority-low">Faible</td>
+        </tr>
+        <tr>
+          <td>Prompt injection — classe CVE reconnue</td>
+          <td>Sécurité IA</td>
+          <td>Ajouter tests prompt injection en CI</td>
+          <td class="priority-low">Faible</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Sources -->
+  <section>
+    <h2>🔗 Sources</h2>
+    <ul class="sources-list">
+      <li><a href="https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-eks-distro-kubernetes-version-1-36/" target="_blank">Amazon EKS — Kubernetes 1.36 disponible</a></li>
+      <li><a href="https://releasebot.io/updates/anthropic" target="_blank">Anthropic Release Notes — juin 2026</a></li>
+      <li><a href="https://www.mindstudio.ai/blog/code-with-claude-2026-new-agent-features" target="_blank">Code with Claude 2026 — 5 new agent features</a></li>
+      <li><a href="https://presenc.ai/research/june-2026-llm-release-roundup" target="_blank">June 2026 LLM Release Roundup</a></li>
+      <li><a href="https://symfony.com/releases/8.2" target="_blank">Symfony 8.2 Release</a></li>
+      <li><a href="https://pegotec.net/php-8-4-and-8-5-in-2026-what-actually-shipped/" target="_blank">PHP 8.4 and 8.5 in 2026 : What Actually Shipped</a></li>
+      <li><a href="https://thehackernews.com/2026/04/anthropic-mcp-design-vulnerability.html" target="_blank">Anthropic MCP Design Vulnerability — RCE (The Hacker News)</a></li>
+      <li><a href="https://www.cisa.gov/news-events/bulletins/sb26-166" target="_blank">CISA Vulnerability Summary — semaine du 8 juin 2026</a></li>
+      <li><a href="https://www.cisa.gov/news-events/bulletins/sb26-159" target="_blank">CISA Vulnerability Summary — semaine du 1er juin 2026</a></li>
+      <li><a href="https://medium.com/@emmaschmidt304/react-19-in-2026-the-hottest-trends-every-developer-must-know-bc73ae38f05a" target="_blank">React 19 in 2026 — The Hottest Trends Every Developer Must Know</a></li>
+      <li><a href="https://tasrieit.com/blog/clickhouse-news-2026" target="_blank">ClickHouse News 2026 — $15B, Langfuse, Postgres</a></li>
+      <li><a href="https://www.langchain.com/blog/semi-structured-multi-modal-rag" target="_blank">LangChain — Multi-Vector Retriever for RAG</a></li>
+      <li><a href="https://medium.com/@vinodkrane/next-generation-agentic-rag-with-langgraph-2026-edition-d1c4c068d2b8" target="_blank">Next-Generation Agentic RAG with LangGraph — 2026 Edition</a></li>
+      <li><a href="https://thenewstack.io/2026-will-be-the-year-of-agentic-workloads-in-production-on-amazon-eks/" target="_blank">2026 Will Be the Year of Agentic Workloads on EKS (The New Stack)</a></li>
+      <li><a href="https://oneuptime.com/blog/post/2026-02-06-instrument-github-actions-opentelemetry/view" target="_blank">How to Instrument GitHub Actions with OpenTelemetry</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  Veille générée automatiquement par Claude Code · Radar Q2 2026 · Prochain review : semaine du 2026-09-07
+</footer>
+
+</body>
+</html>
