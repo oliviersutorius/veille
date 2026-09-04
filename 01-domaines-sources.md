@@ -15,6 +15,9 @@ Chaque domaine est assigné à un développeur référent, qui agrège et filtre
 | 6 | **Frameworks & Architecture** | microservices, event-driven, DDD, edge computing, symfony | Archi lead |
 | 7 | **Frontend & Expérience Dev** | frameworks JS, design systems, tooling (Vite, Bun) | Frontend lead |
 | 8 | **Data & Streaming** | data lakes, streaming (Kafka, Flink), data mesh | Data lead |
+| 9 | **Finance Personnelle & Investissement** | placements, gestion bancaire, livrets, PEA, assurance-vie, rendement, investissement | Volontaire (hors radar tech) |
+
+> **Note sur le domaine 9 :** contrairement aux domaines 1-8, ce domaine ne nourrit pas le tech radar (`04-tech-radar.md`) — il n'y a pas de gouvernance ADOPT/TRIAL/ASSESS/HOLD sur des produits financiers. C'est un domaine de veille informationnelle pure, à visée personnelle pour les membres de l'équipe intéressés.
 
 ---
 
@@ -171,6 +174,25 @@ Chaque domaine est assigné à un développeur référent, qui agrège et filtre
 | Newsletter | [The Data Engineering Podcast](https://www.dataengineeringpodcast.com/) | Hebdo |
 | Podcast | [Data Engineering Podcast](https://www.dataengineeringpodcast.com/) | Hebdo |
 | Conférence | Data Council, Kafka Summit, Flink Forward | Annuel |
+
+---
+
+### Domaine 9 — Finance Personnelle & Investissement
+
+> Domaine informationnel, non lié au tech radar (voir note ci-dessus). Sources en français, orientées épargne/investissement pour particuliers en France (fiscalité PEA, livrets réglementés, etc.).
+
+| Type | Source | Fréquence |
+|---|---|---|
+| Organisme officiel | [AMF — Autorité des marchés financiers](https://www.amf-france.org/fr/actualites-publications) | Ponctuel |
+| Organisme officiel | [Banque de France — Épargne réglementée](https://particuliers.banque-france.org/) | Ponctuel |
+| Site / Comparateur | [MoneyVox](https://www.moneyvox.fr/) | Hebdo |
+| Blog indépendant | [Avenue des Investisseurs](https://www.avenuedesinvestisseurs.fr/) | Hebdo |
+| Site actu bancaire | [Cbanque](https://www.cbanque.com/) | Hebdo |
+| Presse spécialisée | [Le Revenu](https://www.lerevenu.com/) | Hebdo |
+| Presse spécialisée | [Mieux Vivre Votre Argent](https://www.mieuxvivrevotreargent.com/) | Mensuel |
+| Blog / Analyses | [Café de la Bourse](https://www.cafedelabourse.com/) | Hebdo |
+| Communauté | [r/vosfinances (Reddit)](https://www.reddit.com/r/vosfinances/) | Continu |
+| Podcast | [Investir Simple (Nalo)](https://www.nalo.fr/podcast) | Mensuel |
 
 ---
 

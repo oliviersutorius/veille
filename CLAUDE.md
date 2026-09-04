@@ -10,7 +10,7 @@ A structured technology watch (*veille technologique*) program for a development
 
 | File / Directory | Purpose |
 |---|---|
-| `01-domaines-sources.md` | 8 priority domains, each with curated sources (max 5/developer) |
+| `01-domaines-sources.md` | 9 priority domains, each with curated sources (max 5/developer) — domain 9 (personal finance/investing) is informational only and does not feed the tech radar |
 | `02-fiche-evaluation.md` | Canonical template for technology evaluation sheets + filled example |
 | `03-rituels.md` | Meeting calendar: bi-weekly Tech Talk, monthly Brown Bag, quarterly Hack Day + Radar update |
 | `04-tech-radar.md` | The live team radar (4 rings: Adopt / Trial / Assess / Hold), updated each quarter |

@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "WebSearch"
+      "WebSearch",
+      "WebFetch(domain:anthropic.skilljar.com)",
+      "Bash(google-chrome --headless=new --disable-gpu --no-sandbox --hide-scrollbars --force-device-scale-factor=1 --window-size=1920,1200 --virtual-time-budget=3000 --screenshot=debug2.jpg \"file://$\\(pwd\\)/render.html\")"
     ]
   }
 }

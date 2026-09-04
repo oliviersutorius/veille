@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veille Technologique — 30 juillet 2026</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #1a1a2e;
+      background: #f5f6fa;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      color: #fff;
+      padding: 2rem 2.5rem;
+    }
+    header h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.3rem; }
+    header .meta { font-size: 0.9rem; color: #a8b2d8; }
+    header .perimeter {
+      display: inline-block;
+      margin-top: 0.8rem;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 20px;
+      padding: 0.25rem 0.8rem;
+      font-size: 0.82rem;
+      color: #c8d3f5;
+    }
+
+    main { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+    /* Alert banner */
+    .alert-banner {
+      background: #fff3cd;
+      border-left: 4px solid #e6a817;
+      border-radius: 6px;
+      padding: 0.8rem 1.2rem;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+    }
+    .alert-banner strong { color: #856404; }
+
+    section {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      padding: 1.5rem 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #16213e;
+      border-bottom: 2px solid #e8eaf0;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.2rem;
+    }
+    h2 .domain-num {
+      display: inline-block;
+      background: #16213e;
+      color: #fff;
+      border-radius: 50%;
+      width: 1.6rem;
+      height: 1.6rem;
+      font-size: 0.78rem;
+      line-height: 1.6rem;
+      text-align: center;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+    }
+
+    h3 {
+      font-size: 0.97rem;
+      font-weight: 600;
+      color: #0f3460;
+      margin: 1rem 0 0.3rem;
+    }
+
+    p { margin-bottom: 0.6rem; }
+
+    /* Signal badges */
+    .signal {
+      display: inline-block;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.15rem 0.55rem;
+      margin-left: 0.4rem;
+      vertical-align: middle;
+    }
+    .signal-radar { background: #e8f4fd; color: #0369a1; border: 1px solid #bae6fd; }
+    .signal-alert { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
+
+    /* Callout boxes */
+    .callout {
+      border-radius: 6px;
+      padding: 0.7rem 1rem;
+      margin: 0.6rem 0;
+      font-size: 0.9rem;
+    }
+    .callout-radar {
+      background: #eff6ff;
+      border-left: 3px solid #3b82f6;
+      color: #1e40af;
+    }
+    .callout-alert {
+      background: #fff1f2;
+      border-left: 3px solid #f43f5e;
+      color: #be123c;
+    }
+    .callout-action {
+      background: #f0fdf4;
+      border-left: 3px solid #22c55e;
+      color: #15803d;
+    }
+
+    /* Summary table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin-top: 0.8rem;
+    }
+    th {
+      background: #16213e;
+      color: #fff;
+      text-align: left;
+      padding: 0.6rem 0.8rem;
+      font-weight: 600;
+    }
+    td { padding: 0.55rem 0.8rem; border-bottom: 1px solid #e8eaf0; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: #f8f9fc; }
+
+    .priority-urgent { color: #dc2626; font-weight: 700; }
+    .priority-medium { color: #d97706; font-weight: 600; }
+    .priority-low { color: #16a34a; }
+
+    /* Sources */
+    .sources-list { list-style: none; padding: 0; }
+    .sources-list li { padding: 0.3rem 0; border-bottom: 1px solid #f0f0f0; }
+    .sources-list li:last-child { border-bottom: none; }
+    .sources-list a { color: #0369a1; text-decoration: none; font-size: 0.88rem; }
+    .sources-list a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      color: #9ca3af;
+      font-size: 0.82rem;
+      padding: 2rem 1.5rem;
+    }
+
+    code {
+      background: #f1f5f9;
+      border-radius: 3px;
+      padding: 0.1rem 0.35rem;
+      font-size: 0.88em;
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      color: #0f3460;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Veille Technologique</h1>
+  <div class="meta">Générée le <strong>30 juillet 2026</strong> · par Claude Code</div>
+  <span class="perimeter">📅 Périmètre : 1er – 30 juillet 2026 (1 mois)</span>
+</header>
+
+<main>
+
+  <!-- Alert banner -->
+  <div class="alert-banner">
+    ⚠️ <strong>Mois chargé côté sécurité</strong> — supply chain npm/Nx toujours activement exploitée, Langflow de nouveau au catalogue CISA KEV, CVE critique sur LiteLLM/MCP, et un rythme soutenu d'ajouts KEV tout au long de juillet (3 le 7, 4 le 14, 6 les 21-22, 1 le 29).
+  </div>
+
+  <!-- 1. IA / ML -->
+  <section>
+    <h2><span class="domain-num">1</span> Intelligence Artificielle / ML</h2>
+
+    <h3>Claude Sonnet 5 devient le modèle par défaut Free/Pro <span class="signal signal-radar">🔔 Radar</span></h3>
+    <p>Annoncé le 30 juin, le rollout de <strong>Claude Sonnet 5</strong> comme modèle par défaut pour tous les plans Free et Pro a pris effet début juillet. Anthropic le positionne comme une performance proche d'Opus à un tarif Sonnet (2$/M tokens en entrée, tarif promo jusqu'au 31 août 2026), avec des gains marqués en autonomie agentique (planification, usage d'outils navigateur/terminal, tâches multi-étapes sans intervention).</p>
+    <div class="callout callout-radar">🔔 <strong>Radar :</strong> Claude API est en ADOPT. Cette montée en gamme du modèle par défaut mérite un re-test de nos prompts/pipelines existants pour capter les gains d'autonomie agentique.</div>
+
+    <h3>Claude Agent SDK — subagents hiérarchiques</h3>
+    <p>Le SDK (sorti en juin, toujours en évolution en juillet) permet désormais des <strong>subagents hiérarchiques</strong> jusqu'à 3 niveaux de profondeur, des chaînes de fallback entre modèles, une attribution de coût par agent, et un marketplace communautaire d'outils MCP.</p>
+
+    <h3>LangChain 1.14.6 — backends pluggables</h3>
+    <p>Mise à jour du 11 juin (effets se poursuivant en juillet) : backends pluggables pour mémoire/knowledge/RAG/flow, nouvelle Chat API, intégration native Snowflake Cortex. MCP (Model Context Protocol) s'installe comme standard de facto pour l'outillage cross-framework (LangChain, CrewAI, OpenAI SDK, Claude Desktop).</p>
+    <div class="callout callout-radar">🔔 <strong>Radar :</strong> LangChain / LangGraph (ADOPT) continue de mûrir. Les backends pluggables simplifient potentiellement nos intégrations RAG custom.</div>
+
+    <h3>CVE-2026-42271 — LiteLLM AI Gateway <span class="signal signal-alert">⚠️ Sécurité</span></h3>
+    <p>Vulnérabilité exploitant les endpoints MCP de LiteLLM pour obtenir un accès complet aux clés API OpenAI/Anthropic configurées. Voir aussi section Sécurité.</p>
+    <div class="callout callout-alert">⚠️ <strong>Action :</strong> Vérifier si LiteLLM est présent dans la stack (gateway/proxy IA) et patcher si oui.</div>
+  </section>
+
+  <!-- 2. Cloud & Infrastructure -->
+  <section>
+    <h2><span class="domain-num">2</span> Cloud &amp; Infrastructure</h2>
+
+    <h3>Cilium sur EKS — AL2 en fin de vie pour les nouvelles versions K8s <span class="signal signal-alert">⚠️ Action</span></h3>
+    <p>Les AMIs EKS-optimized Amazon Linux 2 ne sont plus publiées pour les versions Kubernetes postérieures à EKS 1.32. <strong>Amazon Linux 2023 ou Bottlerocket</strong> deviennent les choix recommandés pour tout cluster utilisant Cilium (chaîné ou en remplacement du VPC CNI).</p>
+    <div class="callout callout-alert">⚠️ <strong>Action :</strong> Vérifier le node OS des clusters EKS avant toute montée de version — anticiper la migration AL2 → AL2023/Bottlerocket.</div>
+
+    <h3>Crossplane — maturité confirmée</h3>
+    <p>Crossplane, gradué CNCF au plus haut niveau de maturité fin 2025, continue de s'imposer comme référence pour l'IaC Kubernetes-native, alternative à Terraform pour le provisioning cloud.</p>
+    <div class="callout callout-radar">🔔 <strong>Radar :</strong> Crossplane est en TRIAL (POC en cours). Sa graduation CNCF renforce la confiance pour une éventuelle bascule en Trial confirmé/Adopt lors du prochain review.</div>
+
+    <h3>AWS — $3M de crédits cloud pour la CNCF</h3>
+    <p>AWS confirme son investissement continu dans l'écosystème Kubernetes/cloud-native pour 2026.</p>
+  </section>
+
+  <!-- 3. Langages & Runtimes -->
+  <section>
+    <h2><span class="domain-num">3</span> Langages &amp; Runtimes</h2>
+
+    <h3>TypeScript 7.0 — Release Candidate puis sortie, compilateur réécrit en Go <span class="signal signal-radar">🔔 Radar majeur</span></h3>
+    <p>TypeScript 7.0 atteint le stade Release Candidate début juillet puis sort officiellement : le compilateur et le language server sont réécrits en Go (une première dans l'histoire du projet), avec un parallélisme natif sur parsing/type-checking/emit. Gain annoncé : <strong>~10x plus rapide</strong> que TypeScript 6.0.</p>
+    <div class="callout callout-radar">🔔 <strong>Radar :</strong> TypeScript est en ADOPT. Un gain de 10x sur la compilation impacte directement nos temps de build CI — à tester dès que le tooling (ESLint, ts-node, bundlers) suit.</div>
+
+    <h3>Bun — réécriture de Zig vers Rust</h3>
+    <p>Le runtime Bun entame sa réécriture de Zig vers Rust ; cette base Rust doit fonder Bun 1.4. Mouvement suivi de près par la communauté JS (réactions mitigées sur le changement de langage du runtime).</p>
+    <div class="callout callout-radar">🔔 <strong>Radar :</strong> Bun est en TRIAL suite au POC CI (-65% build time). Surveiller la stabilité pendant la transition Rust avant d'envisager un passage en Adopt.</div>
+
+    <h3>PHP 8.6 — calendrier alpha en cours</h3>
+    <p>Alpha 1 sorti le 2 juillet, Alpha 2 mi-juillet, <strong>Alpha 3 le 28 juillet</strong>. Feature freeze / Beta 1 prévus le 13 août, GA visée le 19 novembre 2026. Nouveautés confirmées : API de polling I/O native, fonction <code>clamp()</code>, application partielle de fonctions, support TAILCALL VM sous Windows, sessions plus strictes, remplacement de warnings historiques par des <code>ValueError</code>/<code>TypeError</code> cohérents.</p>
+    <div class="callout callout-radar">🔔 <strong>Radar :</strong> PHP 8.3+ est en ADOPT. Rien d'urgent (GA en novembre), mais à inscrire en veille pour la roadmap 2027.</div>
+
+    <h3>Symfony — préparation Twig 4.0 et PHP 8.6</h3>
+    <p>« A Week of Symfony » (issues #1018 et #1021) rapporte une activité de développement intense fin juillet : correctifs de bugs, support anticipé de <strong>Twig 4.0</strong>, ajustements liés aux changements PHP 8.6. Premiers talks publiés pour <strong>SymfonyCon Warsaw 2026</strong>.</p>
+  </section>
+
+  <!-- 4. DevOps & Platform Engineering -->
+  <section>
+    <h2><span class="domain-num">4</span> DevOps &amp; Platform Engineering</h2>
+
+    <h3>Grafana — synchronisation OTel Collector via GitHub Action (21 juillet) <span class="signal signal-radar">🔔 Signal</span></h3>
+    <p>Grafana Labs a publié une GitHub Action permettant de synchroniser les pipelines OpenTelemetry Collector (en plus des pipelines Alloy), suite à la disponibilité générale du support OpAMP en Fleet Management.</p>
+    <div class="callout callout-action">✅ <strong>Quick win :</strong> Notre stack OpenTelemetry (ADOPT) + GitHub Actions (ADOPT) + Grafana (ADOPT) peut directement bénéficier de cette Action pour automatiser la gestion des pipelines de collecte.</div>
+
+    <h3>Grafana Tempo 3.0 — breaking changes majeurs</h3>
+    <p>Tempo 3.0 finalise la transition vers la nouvelle architecture ingest/write, supprime les composants 2.x dépréciés (module <code>ingester</code> entier, sections de config <code>ingester_client</code>/<code>compactor</code>/<code>metrics_generator_client</code>) et fait passer TraceQL metrics en GA. Les opérateurs <code>!=</code>/<code>!~</code> changent de sémantique (NOT IN / MATCH NONE).</p>
+    <div class="callout callout-alert">⚠️ <strong>Action :</strong> Si Tempo est utilisé dans la stack d'observabilité, lire le guide de migration avant toute montée vers 3.0 — changements de config non rétrocompatibles.</div>
+  </section>
+
+  <!-- 5. Sécurité -->
+  <section>
+    <h2><span class="domain-num">5</span> Sécurité</h2>
+
+    <h3>Supply chain npm — TanStack (CVE-2026-45321) et Nx Console (CVE-2026-48027) <span class="signal signal-alert">⚠️ Critique</span></h3>
+    <p>Compromission en chaîne toujours activement analysée en juillet : abus de workflows GitHub Actions/trusted-publisher pour publier <strong>84 versions malveillantes sur 42 packages TanStack</strong> (CVSS 9.6) — librairies très utilisées pour state management, routing, tables et forms React. Rebond en cascade : la machine d'un contributeur Nx a résolu un package TanStack piégé via <code>pnpm install</code>, un script <code>prepare</code> a exfiltré un token OAuth GitHub CLI, utilisé ensuite pour publier une extension Nx Console malveillante (CVSS 9.8). Les deux CVE sont au catalogue CISA KEV.</p>
+    <div class="callout callout-alert">⚠️ <strong>Action immédiate :</strong> Notre stack React/TypeScript utilise potentiellement des packages TanStack (routing, query, table). Auditer les lockfiles et pin les versions connues saines ; vérifier toute présence de Nx Console dans les environnements de dev.</div>
+
+    <h3>Langflow de nouveau exploité — CVE-2026-55255 <span class="signal signal-alert">⚠️ Sécurité IA</span></h3>
+    <p>Ajouté au catalogue CISA KEV début juillet. Rappel : c'est la même famille de faille (RCE Langflow, CVE-2025-3248) qu'avait exploitée <strong>JadePuffer</strong>, premier ransomware orchestré par LLM documenté (chiffrement autonome d'artefacts/bases IA).</p>
+    <div class="callout callout-alert">⚠️ <strong>Pertinent :</strong> Si des frameworks de workflow LLM type Langflow sont utilisés en interne ou en évaluation, exclure/patcher immédiatement toute instance exposée.</div>
+
+    <h3>FBI — alerte "TeamPCP" sur les outils dev/CI/CD</h3>
+    <p>Groupe systématiquement ciblant les outils de développement et de sécurité de confiance : environnements de dev, pipelines CI/CD, outillage d'audit sécurité — pour voler tokens cloud, clés SSH, secrets Kubernetes et accès corporate.</p>
+    <div class="callout callout-radar">🔔 <strong>Signal :</strong> Renforcer la rotation des secrets CI/CD (SOPS + age déjà en ADOPT) et limiter la portée des tokens GitHub Actions.</div>
+
+    <h3>Rythme KEV soutenu tout le mois</h3>
+    <p>CISA a ajouté des vulnérabilités exploitées quasi chaque semaine de juillet : 3 le 7 (dont Langflow), 4 le 14 (SonicWall SMA1000, SharePoint, AD FS), 6 les 21-22 (plateformes collaboratives et frameworks IA), 2 le 27 (Fortinet FortiOS, Arista VeloCloud), 1 le 29 (Cisco Secure FMC — mot de passe hardcodé).</p>
+
+    <h3>SBOM — Insignary Clarity On-Demand (15 juillet)</h3>
+    <p>Nouvel outil de génération SBOM en self-service et analyse de composition logicielle binaire, sans abonnement annuel — abaisse la barrière d'entrée pour les organisations sans outillage SBOM mature.</p>
+    <div class="callout callout-radar">🔔 <strong>Signal :</strong> À comparer avec notre pipeline SBOM CycloneDX (ADOPT) actuel.</div>
+  </section>
+
+  <!-- 6. Frameworks & Architecture -->
+  <section>
+    <h2><span class="domain-num">6</span> Frameworks &amp; Architecture</h2>
+
+    <h3>Symfony Messenger — architecture de référence event-driven</h3>
+    <p>Rien de nouveau côté breaking changes en juillet, mais la littérature technique continue de consolider Symfony 7 + Messenger comme référence pour les microservices event-driven (Saga pattern pour les transactions distribuées, communication asynchrone découplée). Cohérent avec notre stack ADOPT (Symfony 7.x, Symfony Messenger).</p>
+
+    <h3>API Platform — doc v4.0 disponible</h3>
+    <p>La documentation API Platform v4.0 (Symfony) est publiée et accessible ; pas de changement de posture radar (toujours en TRIAL, évalué Q2 2026).</p>
+  </section>
+
+  <!-- 7. Frontend & Expérience Dev -->
+  <section>
+    <h2><span class="domain-num">7</span> Frontend &amp; Expérience Dev</h2>
+
+    <h3>TypeScript 7 — voir section Langages</h3>
+    <p>Impact direct sur l'expérience dev frontend : temps de compilation/lint divisés, feedback loop IDE accéléré.</p>
+
+    <h3>React 19.2+ — React 20 en développement</h3>
+    <p>Le React Compiler continue son adoption comme standard (memoization automatique, <code>useMemo</code>/<code>useCallback</code> manuels vus comme legacy). React 20 est en développement actif, sans date de sortie communiquée en juillet.</p>
+
+    <h3>Tailwind CSS v4 — adoption qui se confirme</h3>
+    <p>5x plus rapide en build, container queries natives, plugin Vite officiel. Cohérent avec notre stack Vite/React 19.</p>
+  </section>
+
+  <!-- 8. Data & Streaming -->
+  <section>
+    <h2><span class="domain-num">8</span> Data &amp; Streaming</h2>
+
+    <h3>ClickHouse — lecture Iceberg accélérée, pushdown catalogue <span class="signal signal-radar">🔔 Radar</span></h3>
+    <p>Newsletter ClickHouse de juillet : requêtage d'une table Iceberg sur S3 en <strong>0.31s</strong> pour les métadonnées et premières lignes (sans job Spark, sans déplacement de données). <code>SHOW TABLES</code> et <code>system.tables</code> sur les catalogues de data lake (Iceberg REST, Glue, Unity, Hive, Paimon) poussent désormais les prédicats liés au namespace directement au catalogue, évitant un scan complet.</p>
+    <div class="callout callout-radar">🔔 <strong>Radar :</strong> ClickHouse (TRIAL) et Apache Iceberg (TRIAL) progressent en synergie — pertinent pour notre POC analytics dashboard.</div>
+
+    <h3>Kafka → Iceberg — la question a changé</h3>
+    <p>Le sujet dominant en 2026 n'est plus « faut-il adopter Iceberg » mais « quelle fraîcheur peut-on atteindre sur les tables Iceberg, et que faire quand ce n'est pas suffisant ». Architecture classique : Kafka alimente un moteur OLAP temps réel (ClickHouse, Pinot, StarRocks, Druid) pour la fenêtre chaude, tandis que le même flux atterrit dans Iceberg pour l'historique.</p>
+
+    <h3>dbt Labs — Fusion engine, mises à jour post-fusion Fivetran</h3>
+    <p>Après la fusion Fivetran + dbt Labs (1er juin) et le lancement de dbt Core v2.0 / Fusion engine, juillet apporte des améliorations : Wizard, Catalog, gestion de comptes, hybrid jobs, linting Fusion amélioré, chat/recherche utilisateur plus pertinents, contrôles de facturation "dbt State". Corrections sur le statut des runs, timeouts SSH, validation SQL.</p>
+    <div class="callout callout-radar">🔔 <strong>Radar :</strong> dbt est en ADOPT. Le Fusion engine (v2.0) mérite un test dédié avant la prochaine montée de version — vérifier la compatibilité avec nos modèles existants.</div>
+  </section>
+
+  <!-- Tableau récapitulatif -->
+  <section>
+    <h2>📊 Récapitulatif — Signaux Radar</h2>
+    <p style="font-size:0.88rem; color:#6b7280; margin-bottom:0.8rem;">Signaux à discuter lors du prochain Tech Talk ou Brown Bag.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Signal</th>
+          <th>Technologie</th>
+          <th>Mouvement potentiel</th>
+          <th>Priorité</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Supply chain TanStack/Nx Console (CVSS 9.6 / 9.8)</td>
+          <td>React / TypeScript (ADOPT)</td>
+          <td>Auditer lockfiles, pin versions, retirer Nx Console suspect</td>
+          <td class="priority-urgent">⚠️ Urgent</td>
+        </tr>
+        <tr>
+          <td>Cilium/EKS — AL2 fin de vie &gt; EKS 1.32</td>
+          <td>Kubernetes / Cilium (ADOPT/TRIAL)</td>
+          <td>Migrer nodes vers AL2023/Bottlerocket</td>
+          <td class="priority-urgent">⚠️ Urgent</td>
+        </tr>
+        <tr>
+          <td>CVE-2026-42271 LiteLLM MCP</td>
+          <td>Sécurité IA</td>
+          <td>Vérifier présence LiteLLM, patcher</td>
+          <td class="priority-urgent">⚠️ Urgent</td>
+        </tr>
+        <tr>
+          <td>Tempo 3.0 — breaking changes config</td>
+          <td>Grafana (ADOPT)</td>
+          <td>Lire migration guide avant upgrade</td>
+          <td class="priority-medium">Moyen</td>
+        </tr>
+        <tr>
+          <td>TypeScript 7.0 — compilateur Go, ~10x plus rapide</td>
+          <td>TypeScript (ADOPT)</td>
+          <td>Tester sur CI dès compatibilité tooling</td>
+          <td class="priority-medium">Moyen</td>
+        </tr>
+        <tr>
+          <td>Claude Sonnet 5 — défaut Free/Pro, gains agentiques</td>
+          <td>Claude API (ADOPT)</td>
+          <td>Re-tester prompts/pipelines existants</td>
+          <td class="priority-medium">Moyen</td>
+        </tr>
+        <tr>
+          <td>Crossplane — graduation CNCF confirmée</td>
+          <td>Crossplane (TRIAL)</td>
+          <td>Réévaluer maturité au prochain review</td>
+          <td class="priority-medium">Moyen</td>
+        </tr>
+        <tr>
+          <td>dbt Fusion engine v2.0</td>
+          <td>dbt (ADOPT)</td>
+          <td>Tester compatibilité modèles existants</td>
+          <td class="priority-medium">Moyen</td>
+        </tr>
+        <tr>
+          <td>ClickHouse × Iceberg — pushdown catalogue</td>
+          <td>ClickHouse / Iceberg (TRIAL)</td>
+          <td>Suivre pour POC analytics dashboard</td>
+          <td class="priority-low">Faible</td>
+        </tr>
+        <tr>
+          <td>Grafana OTel Collector sync GitHub Action</td>
+          <td>OpenTelemetry (ADOPT)</td>
+          <td>Adopter l'Action pour la gestion des pipelines</td>
+          <td class="priority-low">Faible</td>
+        </tr>
+        <tr>
+          <td>Bun — réécriture Zig → Rust</td>
+          <td>Bun (TRIAL)</td>
+          <td>Surveiller stabilité avant Adopt</td>
+          <td class="priority-low">Faible</td>
+        </tr>
+        <tr>
+          <td>PHP 8.6 — Alpha 3 (28 juillet), GA nov. 2026</td>
+          <td>PHP 8.3+ (ADOPT)</td>
+          <td>Inscrire en veille roadmap 2027</td>
+          <td class="priority-low">Faible</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Sources -->
+  <section>
+    <h2>🔗 Sources</h2>
+    <ul class="sources-list">
+      <li><a href="https://www.anthropic.com/news/claude-sonnet-5" target="_blank">Anthropic — Introducing Claude Sonnet 5</a></li>
+      <li><a href="https://simonwillison.net/2026/Jun/30/claude-sonnet-5/" target="_blank">Simon Willison — What's new in Claude Sonnet 5</a></li>
+      <li><a href="https://www.macrumors.com/2026/06/30/anthropic-claude-sonnet-5/" target="_blank">MacRumors — Anthropic Launches Claude Sonnet 5</a></li>
+      <li><a href="https://www.buildfastwithai.com/blogs/ai-news-today-july-1-2026" target="_blank">AI News Today — July 1 2026</a></li>
+      <li><a href="https://chatgptaihub.com/the-big-ai-coding-agents-story-what-july-16-s-news-means-for-developers/" target="_blank">AI Coding Agents — July 2026</a></li>
+      <li><a href="https://oneuptime.com/blog/post/2026-01-26-cilium-aws-eks/view" target="_blank">How to Use Cilium with AWS EKS</a></li>
+      <li><a href="https://aws.amazon.com/blogs/containers/aws-at-kubecon-eu-2026-open-source-leadership-meets-production-innovation" target="_blank">AWS at KubeCon EU 2026</a></li>
+      <li><a href="https://www.crossplane.io/" target="_blank">Crossplane — Cloud-Native Framework for Platform Engineering</a></li>
+      <li><a href="https://developers.slashdot.org/story/26/07/05/2335217/go-based-typescript-70-finally-reaches-release-candidate-stage" target="_blank">Slashdot — TypeScript 7.0 Reaches Release Candidate Stage</a></li>
+      <li><a href="https://javascriptweekly.com/issues/794" target="_blank">JavaScript Weekly #794 — npm 12, TypeScript 7, Bun in Rust</a></li>
+      <li><a href="https://symfony.com/blog/a-week-of-symfony-1021-july-20-26-2026" target="_blank">A Week of Symfony #1021 (20–26 juillet 2026)</a></li>
+      <li><a href="https://symfony.com/blog/a-week-of-symfony-1018-june-29-july-5-2026" target="_blank">A Week of Symfony #1018 (29 juin – 5 juillet 2026)</a></li>
+      <li><a href="https://php.watch/versions/8.6/rfcs" target="_blank">PHP.Watch — PHP 8.6 RFC List</a></li>
+      <li><a href="https://www.linuxcompatible.org/story/php-860-alpha-2-released-native-polling-api-stricter-sessions-and-late-2026-roadmap" target="_blank">PHP 8.6.0 Alpha 2 — Native Polling API</a></li>
+      <li><a href="https://www.warp2search.net/story/php-859-and-8233-security-updates-drop-alongside-86-alpha-3" target="_blank">PHP 8.5.9 / 8.2.33 Security Updates alongside 8.6 Alpha 3</a></li>
+      <li><a href="https://grafana.com/whats-new/2026-07-21-sync-opentelemetry-collector-pipelines-with-github-action/" target="_blank">Grafana Labs — Sync OTel Collector pipelines with GitHub Action</a></li>
+      <li><a href="https://grafana.com/blog/tempo-3-0-release-all-the-latest-features/?pg=blog" target="_blank">Grafana Tempo 3.0 Release</a></li>
+      <li><a href="https://www.broadcom.com/support/security-center/protection-bulletin/cve-2026-45321-tanstack-npm-supply-chain-compromise" target="_blank">CVE-2026-45321 — TanStack npm Supply Chain Compromise</a></li>
+      <li><a href="https://integsec.com/blog/cve-2026-48027-nx-console-supply-chain-compromise-what-it-means-for-your-business-and-how-to-respond" target="_blank">CVE-2026-48027 — Nx Console Supply-Chain Compromise</a></li>
+      <li><a href="https://www.scworld.com/brief/cisa-adds-daemon-tools-tanstack-and-nx-console-flaws-to-known-exploited-vulnerabilities-catalog" target="_blank">SC Media — CISA adds Daemon Tools, TanStack, Nx Console to KEV</a></li>
+      <li><a href="https://www.cisa.gov/news-events/alerts/2026/07/07/cisa-adds-three-known-exploited-vulnerabilities-catalog" target="_blank">CISA — Adds Three KEV (7 juillet, incl. Langflow)</a></li>
+      <li><a href="https://www.cisa.gov/news-events/alerts/2026/07/14/cisa-adds-four-known-exploited-vulnerabilities-catalog" target="_blank">CISA — Adds Four KEV (14 juillet)</a></li>
+      <li><a href="https://thecyberthrone.in/2026/07/23/cisa-adds-six-vulnerabilities-to-kev-july-2026/" target="_blank">CISA adds six vulnerabilities to KEV — juillet 2026</a></li>
+      <li><a href="https://www.cisa.gov/news-events/alerts/2026/07/27/cisa-adds-two-known-exploited-vulnerabilities-catalog" target="_blank">CISA — Adds Two KEV (27 juillet)</a></li>
+      <li><a href="https://www.cisa.gov/news-events/alerts/2026/07/29/cisa-adds-one-known-exploited-vulnerability-catalog" target="_blank">CISA — Adds One KEV (29 juillet)</a></li>
+      <li><a href="https://www.veracode.com/blog/cyber-risk-intelligence-july-2026/" target="_blank">Veracode — Cyber Risk Intelligence Brief, juillet 2026</a></li>
+      <li><a href="https://securityboulevard.com/2026/07/news-alert-insignarys-on-demand-sbom-verification-boosts-software-supply-chain-security/" target="_blank">Security Boulevard — Insignary SBOM On-Demand</a></li>
+      <li><a href="https://amdatalakehouse.substack.com/p/the-state-of-streaming-to-apache" target="_blank">The State of Streaming to Apache Iceberg — juillet 2026</a></li>
+      <li><a href="https://clickhouse.com/blog/202607-newsletter" target="_blank">ClickHouse — Newsletter juillet 2026</a></li>
+      <li><a href="https://releasebot.io/updates/dbt-labs" target="_blank">dbt Labs Release Notes — juillet 2026</a></li>
+      <li><a href="https://www.fivetran.com/press/fivetran-dbt-labs-complete-merger-to-create-the-data-infrastructure-for-trusted-ai-agents" target="_blank">Fivetran + dbt Labs — Fusion Merger</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  Veille générée automatiquement par Claude Code · Radar Q2 2026 · Prochain review : semaine du 2026-09-07
+</footer>
+
+</body>
+</html>
