@@ -9,7 +9,7 @@ Chaque domaine est assigné à un développeur référent, qui agrège et filtre
 |---|---|---|---|
 | 1 | **Intelligence Artificielle / ML** | LLMs, RAG, agents, MLOps, edge AI | Voluntaire IA |
 | 2 | **Cloud & Infrastructure** | Kubernetes, serverless, FinOps, multi-cloud | Ops/Platform |
-| 3 | **Langages & Runtimes** | Php, React, Rust, Go, Python, WASM, nouveaux runtimes | Backend lead |
+| 3 | **Langages & Runtimes** | Php, React, Rust, Go, Python, Java (JVM, Spring, Quarkus), WASM, nouveaux runtimes | Backend lead |
 | 4 | **DevOps & Platform Engineering** | CI/CD, IaC, observabilité, developer portals | DevOps |
 | 5 | **Sécurité** | Supply chain, SAST/DAST, secrets management, SBOM | Security champ |
 | 6 | **Frameworks & Architecture** | microservices, event-driven, DDD, edge computing, symfony | Archi lead |
@@ -82,15 +82,23 @@ Chaque domaine est assigné à un développeur référent, qui agrège et filtre
 | Blog | [Rust Blog](https://blog.rust-lang.org/) | Mensuel |
 | Blog | [Go Blog](https://go.dev/blog/) | Mensuel |
 | Blog | [Armin Ronacher](https://lucumr.pocoo.org/) | Ponctuel |
+| Blog | [Inside Java (Oracle)](https://inside.java/) | Hebdo |
+| Blog | [Spring Blog](https://spring.io/blog) | Hebdo |
+| Blog | [Quarkus Blog](https://quarkus.io/blog/) | Mensuel |
+| Blog | [Foojay.io](https://foojay.io/today/) | Hebdo |
 | Newsletter | [PHP Weekly](https://www.phpweekly.com/) | Hebdo |
 | Newsletter | [Rust Weekly](https://this-week-in-rust.org/) | Hebdo |
 | Newsletter | [Golang Weekly](https://golangweekly.com/) | Hebdo |
 | Newsletter | [Python Weekly](https://www.pythonweekly.com/) | Hebdo |
+| Newsletter | [Java Weekly (Baeldung)](https://www.baeldung.com/category/weekly-review) | Hebdo |
 | Podcast | [PHP Internals News](https://phpinternals.news/) | Hebdo |
 | Podcast | [PHP Roundtable](https://phproundtable.com/) | Mensuel |
+| Podcast | [Inside Java Podcast](https://inside.java/podcast/) | Mensuel |
+| Podcast | [Les Cast Codeurs](https://lescastcodeurs.com/) | Mensuel |
 | Podcast | [Software Engineering Daily](https://softwareengineeringdaily.com/) | Quotidien |
 | GitHub | [PHP RFC Watch](https://php-rfc-watch.beberlei.de/) | Mensuel |
-| Conférence | PHPConf, ForumPHP (AFUP), RustConf, GopherCon, PyCon | Annuel |
+| Référence | [OpenJDK JEPs](https://openjdk.org/jeps/0) | Mensuel |
+| Conférence | PHPConf, ForumPHP (AFUP), RustConf, GopherCon, PyCon, Devoxx France, JavaOne | Annuel |
 
 ---
 

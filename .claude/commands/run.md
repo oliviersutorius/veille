@@ -9,7 +9,7 @@ Lance une veille technologique sur les **2 dernières semaines** couvrant les 9 
 3. Lancer des recherches web **en parallèle** sur les 9 domaines :
    - Intelligence Artificielle / ML (LLMs, RAG, agents, LangChain, Claude API, Ollama)
    - Cloud & Infrastructure (Kubernetes, AWS EKS, OpenTofu, Crossplane, Cilium)
-   - Langages & Runtimes (PHP, Symfony, TypeScript, Go, Python, Bun, Rust)
+   - Langages & Runtimes (PHP, Symfony, TypeScript, Go, Python, Bun, Rust, Java et son écosystème : JDK/OpenJDK, Spring Boot, Quarkus, GraalVM, Maven/Gradle)
    - DevOps & Platform Engineering (GitHub Actions, ArgoCD, OpenTelemetry, Temporal, Grafana)
    - Sécurité (supply chain, CVEs, SAST/DAST, secrets, SBOM)
    - Frameworks & Architecture (Symfony, API Platform, microservices, event-driven)
