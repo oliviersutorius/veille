@@ -192,7 +192,7 @@
 
   <!-- Alert banner -->
   <div class="alert-banner">
-    ⚠️ <strong>Semaine marquée par trois correctifs critiques React/Next.js</strong> — Netlify et l'équipe Next.js ont publié le 14 octobre trois avis de sécurité critiques/élevés touchant React Server Components et Next.js : une RCE critique liée à <code>use cache</code>/Cache Components, une RCE critique dans le traitement SVG via la librairie <code>sharp</code> (CVE-2026-96889), et un déni de service dans les Server Actions. Correctifs disponibles (<code>next</code> ≥ 15.5.28/16.4.1, <code>react</code> ≥ 19.0.9/19.1.10/19.2.9/19.3.1) — React 19 étant en ADOPT sur notre radar, c'est l'action prioritaire de la semaine. Par ailleurs, CISA a ajouté le 14 octobre 4 CVE au catalogue KEV (PAN-OS, Cisco Secure Email Gateway, Ahsay AhsayCBS), hors de notre stack directe mais à auditer en périphérie. Côté finance perso : le débat budgétaire 2027 se poursuit à l'Assemblée toute la semaine, avec un vote solennel sur la partie recettes attendu le 20 octobre (just après cette fenêtre) et une menace de 49.3 ; le CAC 40 a progressé sur la semaine (7 832 → 7 935 points sur les séances connues).
+    ⚠️ <strong>Semaine chargée côté sécurité, avec un impact direct sur notre stack frontend.</strong> Netlify et l'équipe Next.js ont publié le 14 octobre trois avis de sécurité critiques/élevés touchant React Server Components et Next.js : deux RCE critiques (dont une via le traitement SVG de la librairie <code>sharp</code>, CVE-2026-96889) et un déni de service dans les Server Actions. Correctifs disponibles (<code>next</code> ≥ 15.5.28/16.4.1, <code>react</code> ≥ 19.0.9/19.1.10/19.2.9/19.3.1) — React 19 étant en ADOPT, c'est l'action prioritaire de la semaine. CISA a par ailleurs ajouté 6 CVE au catalogue KEV cette semaine (PAN-OS, Cisco Secure Email Gateway, Ahsay AhsayCBS le 14 ; Atlassian Data Center le 15, exploitée en moins de 2h), et un zero-day BeyondTrust a été exploité par un groupe lié à la Chine — aucun de ces produits n'est dans notre stack ADOPT, mais à auditer en périphérie. Côté supply chain npm, trois nouveaux paquets malveillants confirmés cette semaine (MALFEX « imgdecode », avis OSSF sur <code>@pkgship/frpc-linux-arm64</code> et <code>@fluxionii/baileys</code>) justifient une vérification des lockfiles (TypeScript/React en ADOPT). Kubernetes 1.34 atteint sa fin de vie le 27 octobre (ADOPT, vérifier les clusters EKS). Côté finance perso : le débat budgétaire 2027 se poursuit à l'Assemblée, avec un vote solennel sur la partie recettes attendu le 20 octobre (just après cette fenêtre) et une menace de 49.3 ; le CAC 40 a progressé sur la semaine (7 832 → 7 935 points sur les séances connues) et les taux de crédit immobilier ont de nouveau augmenté.
   </div>
 
   <!-- 1. IA / ML -->
@@ -251,9 +251,13 @@
     <p>CISA a ajouté le 14 octobre 4 vulnérabilités à son catalogue Known Exploited Vulnerabilities après confirmation d'exploitation active : <strong>CVE-2026-0322</strong> (PAN-OS, injection de code dans l'interface de management, CVSS 8.6, exécution de code arbitraire avec privilèges root par un attaquant authentifié), <strong>CVE-2026-76519</strong> (Cisco Secure Email Gateway, path traversal), et <strong>CVE-2026-105133</strong>/<strong>CVE-2026-105134</strong> (Ahsay AhsayCBS, authentification défaillante et injection de commande). Les agences fédérales américaines avaient jusqu'au 17 octobre pour corriger (directive BOD 26-04).</p>
     <div class="callout callout-alert">⚠️ <strong>Vérification :</strong> aucun de ces produits n'est dans notre stack ADOPT. Vérifier simplement l'absence de PAN-OS/Cisco Secure Email Gateway/AhsayCBS exposés en périphérie de notre infrastructure.</div>
 
-    <h3>Rumeur d'une 4ᵉ vague du ver npm Shai-Hulud — date non confirmée <span class="signal signal-alert">⚠️ À confirmer</span></h3>
-    <p>Une session de conférence (Open Source Summit Europe, programmée le 9 octobre, donc en limite de fenêtre) évoque une « version 4 » du ver npm Shai-Hulud ayant « franchi une nouvelle limite », sans détail vérifiable. Un article non daté (ITPro) rapporte la découverte d'un paquet ayant contourné le scanning anti-malware de npm après un délai de publication de 111 jours. Aucune advisory officielle npm/GitHub datée dans la fenêtre du 12-19 octobre n'a pu être confirmée — à vérifier directement avant toute action.</p>
-    <div class="callout callout-alert">⚠️ <strong>Vigilance :</strong> TypeScript/React (ADOPT) dépendent de l'écosystème npm. Maintenir les politiques de cooldown/provenance (Sigstore) déjà en place en attendant confirmation.</div>
+    <h3>Atlassian Data Center et BeyondTrust : deux failles critiques exploitées en masse <span class="signal signal-alert">⚠️ Alerte</span></h3>
+    <p>CISA a ajouté le 15 octobre au catalogue KEV la faille <strong>CVE-2026-21589</strong> (CVSS 9.3, lecture de fichiers sans authentification sur 8 produits Atlassian Data Center), exploitée en masse moins de 2h après sa divulgation publique. Par ailleurs, un groupe lié à la Chine (« Armory Castle ») a exploité un zero-day sur <strong>BeyondTrust Remote Support</strong> (<strong>CVE-2026-102764</strong>, CVSS 9.3) — un correctif manuel (BT26-05-RS) est requis pour les instances self-hosted.</p>
+    <div class="callout callout-alert">⚠️ <strong>Vérification :</strong> aucun produit Atlassian Data Center ni BeyondTrust dans notre stack ADOPT — à mentionner si l'équipe en utilise en interne (ex. Confluence/Jira Data Center).</div>
+
+    <h3>Nouvelle vague de paquets npm malveillants confirmés (MALFEX, avis OSSF) <span class="signal signal-alert">⚠️ Urgent</span></h3>
+    <p>The Hacker News a révélé le 17 octobre le package npm <strong>MALFEX « imgdecode »</strong> (uploadé le 30 septembre par « malfexteste8 », ~979 téléchargements, toujours en ligne au moment de l'article) : un addon natif Windows qui télécharge un shellcode chiffré depuis GitHub au <code>require()</code>. Deux avis OSSF confirment également du code malveillant dans <strong>@pkgship/frpc-linux-arm64</strong> (18 octobre) et <strong>@fluxionii/baileys</strong> (19 octobre), avec recommandation de considérer toute machine ayant installé ces paquets comme totalement compromise. Une rumeur persistante (non confirmée officiellement) évoque par ailleurs une 4ᵉ vague du ver npm Shai-Hulud, sans date ni avis officiel npm/GitHub retrouvé dans la fenêtre.</p>
+    <div class="callout callout-alert">⚠️ <strong>Action :</strong> TypeScript/React (ADOPT) dépendent de l'écosystème npm. Vérifier les lockfiles contre ces noms de paquets, scanner les dépendances, et renforcer les politiques de cooldown/provenance (Sigstore en TRIAL) sur les nouvelles dépendances.</div>
 
     <h3>Semaine calme pour Trivy, Vault, Semgrep, Falco, Sigstore/Cosign, OWASP ZAP</h3>
     <p>Aucune nouvelle release vérifiable datée précisément dans la fenêtre pour ces outils ADOPT/TRIAL/ASSESS de notre radar sécurité.</p>
@@ -275,7 +279,11 @@
     <p>Voir le détail complet dans la section Sécurité ci-dessus : trois avis de sécurité publiés le 14 octobre touchant React Server Components et Next.js (deux RCE critiques, un DoS de sévérité élevée). Correctifs disponibles pour <code>next</code> et les paquets React 19.</p>
     <div class="callout callout-alert">⚠️ <strong>Action prioritaire :</strong> React 19 est en ADOPT, notre framework UI principal. Mettre à jour en priorité toute application concernée (voir versions correctives dans la section Sécurité).</div>
 
-    <h3>Semaine calme pour TypeScript, Vite, Bun, Astro, Hono et Effect-TS</h3>
+    <h3>ViteConf 2026 : Evan You présente l'évolution de Vite au-delà du bundling <span class="signal signal-radar">🔔 Radar</span></h3>
+    <p>L'édition en ligne de ViteConf s'est tenue le 15 octobre, avec en ouverture un talk d'Evan You, « Developer Tooling in the Agentic Era », annonçant l'évolution de Vite vers une chaîne d'outils complète basée sur Rust (lint, test, cache), au-delà du simple bundling. Contenu post-événement (replay/recap) pas encore indexé au moment de la rédaction — à vérifier sur viteconf.org/schedule.</p>
+    <div class="callout callout-radar">🔔 <strong>Radar :</strong> Bun 1.x est en TRIAL ; l'écosystème Vite/VoidZero (Rolldown, Vite+) est à surveiller comme alternative/complément de tooling. Pas d'action immédiate, suivre le replay au prochain cycle de veille.</div>
+
+    <h3>Semaine calme pour TypeScript, Bun, Astro, Hono et Effect-TS</h3>
     <p>Aucune nouvelle release ou annonce datée précisément dans la fenêtre du 12 au 19 octobre pour ces technologies de notre radar Frontend. Pour mémoire (hors fenêtre), TypeScript 7.0 (portage natif en Go, builds 8 à 12x plus rapides) est en GA depuis le 8 juillet, sans nouvelle version mineure constatée cette semaine.</p>
   </section>
 
@@ -297,6 +305,9 @@
 
     <h3>CAC 40 en hausse sur la semaine, taux Livret A toujours sans confirmation officielle de révision exceptionnelle <span class="signal signal-finance">💰 Info finance</span></h3>
     <p>Le CAC 40 a progressé sur les séances connues de la semaine : 7 832,88 points le 12 octobre, 7 827,63 le 13, 7 873,11 le 14, puis 7 934,70 le 15 octobre (données du 16 au 19 octobre non disponibles au moment de la rédaction) — soit une hausse d'environ +1,3 % sur les quatre premières séances. Côté Livret A, le taux reste à 1,70 % depuis le 1er août 2026 ; la Banque de France calcule le taux habituellement les 15 janvier et 15 juillet, avec une révision exceptionnelle théoriquement possible au 1er mai ou au 1er novembre en cas de choc d'inflation ou de marché monétaire. Aucun communiqué officiel de la Banque de France n'a été retrouvé pour une révision au 1er novembre 2026 ; un article évoquant un calcul à 2 % pour une révision au 15 octobre provient d'une source de fiabilité faible (rédigée avec assistance IA, non confirmée) — à traiter avec prudence tant qu'aucune annonce officielle n'est publiée.</p>
+
+    <h3>Crédit immobilier : nouvelle hausse des taux, assurance-vie stable sur la fiscalité <span class="signal signal-finance">💰 Info finance</span></h3>
+    <p>Les taux de crédit immobilier moyens ont de nouveau augmenté en octobre : environ 3,50 % sur 15 ans, 3,55-3,66 % sur 20 ans (+0,15 point en un mois selon MySweetImmo), et 3,75 % sur 25 ans, sur fond de remontée de l'OAT 10 ans ; le taux d'usure (20 ans et plus) a été relevé de 5,29 % à 5,40 % (TAEG) au 1er octobre. Côté assurance-vie, aucune actualité réglementaire nouvelle cette semaine : le taux de prélèvements sociaux reste à 17,2 %, explicitement exclu de la hausse de CSG prévue par la LFSS 2026 qui porterait PEA/CTO à 18,6 % — des scénarios de hausse du PFU (jusqu'à 36 % évoqués) restent des rumeurs non confirmées.</p>
 
     <h3>À surveiller la semaine prochaine</h3>
     <p>Résultat du vote solennel sur la partie recettes du budget 2027 le 20 octobre (et suites : 49.3, motion de censure éventuelle), et confirmation ou non d'une révision exceptionnelle du taux du Livret A/LEP début novembre.</p>
@@ -341,10 +352,22 @@
           <td class="priority-medium">Moyen</td>
         </tr>
         <tr>
-          <td>Rumeur non confirmée d'une 4ᵉ vague du ver npm Shai-Hulud (date incertaine)</td>
+          <td>Nouveaux paquets npm malveillants confirmés : MALFEX "imgdecode" (17 oct.), @pkgship/frpc-linux-arm64 et @fluxionii/baileys (avis OSSF 18-19 oct.)</td>
           <td>Écosystème npm (TypeScript/React en ADOPT)</td>
-          <td>Maintenir cooldown/provenance (Sigstore) en attendant confirmation officielle</td>
-          <td class="priority-low">Faible — à confirmer</td>
+          <td>Vérifier les lockfiles contre ces paquets, renforcer cooldown/provenance (Sigstore) sur les nouvelles dépendances</td>
+          <td class="priority-urgent">⚠️ Urgent</td>
+        </tr>
+        <tr>
+          <td>Atlassian Data Center (CVE-2026-21589, CVSS 9.3, exploitée &lt;2h après divulgation) et BeyondTrust zero-day (CVE-2026-102764) exploités par des groupes APT</td>
+          <td>Hors stack — surface d'attaque périmétrique</td>
+          <td>Audit : vérifier l'absence de ces produits exposés en périphérie</td>
+          <td class="priority-low">Faible</td>
+        </tr>
+        <tr>
+          <td>ViteConf 2026 (15 oct.) : Evan You annonce l'évolution de Vite vers une toolchain Rust complète</td>
+          <td>Bun 1.x (TRIAL) / écosystème Vite-VoidZero</td>
+          <td>Suivre le replay et les annonces Rolldown/Vite+ au prochain cycle de veille</td>
+          <td class="priority-low">Faible</td>
         </tr>
         <tr>
           <td>Anthropic annoncerait l'interdiction des usages abusifs persistants de Claude dès novembre 2026 (source secondaire)</td>
@@ -372,6 +395,17 @@
       <li><a href="https://threatcluster.io/cluster/cisa-adds-critical-vulnerabilities-to-kev-catalog-amid-activ-f5c0060c" target="_blank">ThreatCluster — CISA ajoute des vulnérabilités critiques au catalogue KEV</a></li>
       <li><a href="https://osselceu2026.sched.com/event/2RajY" target="_blank">Open Source Summit Europe 2026 — Session sur la famille de vers npm Shai-Hulud</a></li>
       <li><a href="https://www.itpro.com/security/malware/is-shai-hulud-back-researchers-spot-wormy-boy-slipping-past-npm-malware-scanning-features" target="_blank">ITPro — Le ver npm Shai-Hulud contourne le scanning anti-malware de npm</a></li>
+      <li><a href="https://thehackernews.com/2026/10/malfex-npm-package-imgdecode-hides.html" target="_blank">The Hacker News — Le package npm MALFEX "imgdecode" cache un shellcode</a></li>
+      <li><a href="https://vulners.com/ossf/OSSF:MAL-2026-17922" target="_blank">OSSF — Avis sur le paquet malveillant @pkgship/frpc-linux-arm64</a></li>
+      <li><a href="https://vulners.com/ossf/OSSF:MAL-2026-17925" target="_blank">OSSF — Avis sur le paquet malveillant @fluxionii/baileys</a></li>
+      <li><a href="https://thehackernews.com/2026/10/atlassian-data-center-flaw-draws.html" target="_blank">The Hacker News — La faille Atlassian Data Center exploitée en masse</a></li>
+      <li><a href="https://thehackernews.com/2026/10/china-linked-hackers-exploited.html" target="_blank">The Hacker News — Un groupe lié à la Chine exploite un zero-day BeyondTrust</a></li>
+      <li><a href="https://byteiota.com/viteconf-2026-what-evan-you-will-drop-on-october-15/" target="_blank">ByteIota — ViteConf 2026 : ce qu'Evan You va annoncer le 15 octobre</a></li>
+      <li><a href="https://viteconf.org/schedule" target="_blank">ViteConf — Programme de l'édition 2026</a></li>
+      <li><a href="https://www.pretto.fr/taux-immobilier/historique-taux-immobilier/2026/analyse-taux-immobilier-octobre-2026/" target="_blank">Pretto — Analyse des taux de crédit immobilier, octobre 2026</a></li>
+      <li><a href="https://www.mysweetimmo.com/taux-immobilier/" target="_blank">MySweetImmo — Taux de crédit immobilier</a></li>
+      <li><a href="https://selectra.info/finance/actualites/marche/taux-usure-1er-octobre-pret-immobilier-50-ans" target="_blank">Selectra — Taux d'usure au 1er octobre 2026</a></li>
+      <li><a href="https://www.raisin.com/fr-fr/placement/assurance-vie/fiscalite/" target="_blank">Raisin — Fiscalité de l'assurance-vie</a></li>
       <li><a href="https://www.abcbourse.com/marches/agenda-des-societes-pour-la-journee_703949" target="_blank">ABC Bourse — Cotations CAC 40, semaine du 12-15 octobre 2026</a></li>
       <li><a href="https://www.banque-france.fr/system/files/2026-07/CP-Livret-A-LEP-Juillet-2026.pdf" target="_blank">Banque de France — Communiqué de presse Livret A / LEP, juillet 2026</a></li>
       <li><a href="https://eco3min.fr/taux-livret-a-date-revision/" target="_blank">Eco3min — Taux du Livret A : dates de révision et formule de calcul</a></li>
