@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veille Technologique — 19 octobre 2026</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #1a1a2e;
+      background: #f5f6fa;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      color: #fff;
+      padding: 2rem 2.5rem;
+    }
+    header h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.3rem; }
+    header .meta { font-size: 0.9rem; color: #a8b2d8; }
+    header .perimeter {
+      display: inline-block;
+      margin-top: 0.8rem;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 20px;
+      padding: 0.25rem 0.8rem;
+      font-size: 0.82rem;
+      color: #c8d3f5;
+    }
+
+    main { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+    /* Alert banner */
+    .alert-banner {
+      background: #fff3cd;
+      border-left: 4px solid #e6a817;
+      border-radius: 6px;
+      padding: 0.8rem 1.2rem;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+    }
+    .alert-banner strong { color: #856404; }
+
+    section {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      padding: 1.5rem 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #16213e;
+      border-bottom: 2px solid #e8eaf0;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.2rem;
+    }
+    h2 .domain-num {
+      display: inline-block;
+      background: #16213e;
+      color: #fff;
+      border-radius: 50%;
+      width: 1.6rem;
+      height: 1.6rem;
+      font-size: 0.78rem;
+      line-height: 1.6rem;
+      text-align: center;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+    }
+    h2 .domain-num.finance { background: #b45309; }
+
+    h3 {
+      font-size: 0.97rem;
+      font-weight: 600;
+      color: #0f3460;
+      margin: 1rem 0 0.3rem;
+    }
+
+    p { margin-bottom: 0.6rem; }
+
+    /* Signal badges */
+    .signal {
+      display: inline-block;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.15rem 0.55rem;
+      margin-left: 0.4rem;
+      vertical-align: middle;
+    }
+    .signal-radar { background: #e8f4fd; color: #0369a1; border: 1px solid #bae6fd; }
+    .signal-alert { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
+    .signal-finance { background: #fef9c3; color: #92400e; border: 1px solid #fde68a; }
+    .signal-finance-alert { background: #ffedd5; color: #9a3412; border: 1px solid #fed7aa; }
+
+    /* Callout boxes */
+    .callout {
+      border-radius: 6px;
+      padding: 0.7rem 1rem;
+      margin: 0.6rem 0;
+      font-size: 0.9rem;
+    }
+    .callout-radar {
+      background: #eff6ff;
+      border-left: 3px solid #3b82f6;
+      color: #1e40af;
+    }
+    .callout-alert {
+      background: #fff1f2;
+      border-left: 3px solid #f43f5e;
+      color: #be123c;
+    }
+    .callout-action {
+      background: #f0fdf4;
+      border-left: 3px solid #22c55e;
+      color: #15803d;
+    }
+    .callout-finance {
+      background: #fffbeb;
+      border-left: 3px solid #d97706;
+      color: #92400e;
+    }
+    .callout-finance-alert {
+      background: #fff7ed;
+      border-left: 3px solid #ea580c;
+      color: #9a3412;
+    }
+
+    /* Summary table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin-top: 0.8rem;
+    }
+    th {
+      background: #16213e;
+      color: #fff;
+      text-align: left;
+      padding: 0.6rem 0.8rem;
+      font-weight: 600;
+    }
+    td { padding: 0.55rem 0.8rem; border-bottom: 1px solid #e8eaf0; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: #f8f9fc; }
+
+    .priority-urgent { color: #dc2626; font-weight: 700; }
+    .priority-medium { color: #d97706; font-weight: 600; }
+    .priority-low { color: #16a34a; }
+
+    /* Sources */
+    .sources-list { list-style: none; padding: 0; }
+    .sources-list li { padding: 0.3rem 0; border-bottom: 1px solid #f0f0f0; }
+    .sources-list li:last-child { border-bottom: none; }
+    .sources-list a { color: #0369a1; text-decoration: none; font-size: 0.88rem; }
+    .sources-list a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      color: #9ca3af;
+      font-size: 0.82rem;
+      padding: 2rem 1.5rem;
+    }
+
+    code {
+      background: #f1f5f9;
+      border-radius: 3px;
+      padding: 0.1rem 0.35rem;
+      font-size: 0.88em;
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      color: #0f3460;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Veille Technologique</h1>
+  <div class="meta">Générée le <strong>19 octobre 2026</strong> · par Claude Code</div>
+  <span class="perimeter">📅 Périmètre : 12 – 19 octobre 2026 (7 jours)</span>
+</header>
+
+<main>
+
+  <!-- Alert banner -->
+  <div class="alert-banner">
+    ⚠️ <strong>Semaine marquée par trois correctifs critiques React/Next.js</strong> — Netlify et l'équipe Next.js ont publié le 14 octobre trois avis de sécurité critiques/élevés touchant React Server Components et Next.js : une RCE critique liée à <code>use cache</code>/Cache Components, une RCE critique dans le traitement SVG via la librairie <code>sharp</code> (CVE-2026-96889), et un déni de service dans les Server Actions. Correctifs disponibles (<code>next</code> ≥ 15.5.28/16.4.1, <code>react</code> ≥ 19.0.9/19.1.10/19.2.9/19.3.1) — React 19 étant en ADOPT sur notre radar, c'est l'action prioritaire de la semaine. Par ailleurs, CISA a ajouté le 14 octobre 4 CVE au catalogue KEV (PAN-OS, Cisco Secure Email Gateway, Ahsay AhsayCBS), hors de notre stack directe mais à auditer en périphérie. Côté finance perso : le débat budgétaire 2027 se poursuit à l'Assemblée toute la semaine, avec un vote solennel sur la partie recettes attendu le 20 octobre (just après cette fenêtre) et une menace de 49.3 ; le CAC 40 a progressé sur la semaine (7 832 → 7 935 points sur les séances connues).
+  </div>
+
+  <!-- 1. IA / ML -->
+  <section>
+    <h2><span class="domain-num">1</span> Intelligence Artificielle / ML</h2>
+
+    <h3>Anthropic annoncerait l'interdiction des usages abusifs persistants de Claude à partir de novembre 2026 <span class="signal signal-radar">🔔 Radar</span></h3>
+    <p>Selon un agrégateur de presse allemand daté du 14 octobre, Anthropic prévoirait d'interdire les usages abusifs persistants de Claude à compter de novembre 2026, dans la continuité de sa politique d'interdiction des comportements « abusifs ou cruels » envers ses modèles annoncée début octobre. Source secondaire uniquement — aucune annonce officielle directement retrouvée sur anthropic.com/news au moment de la rédaction, à vérifier avant diffusion large.</p>
+    <div class="callout callout-radar">🔔 <strong>Radar :</strong> Claude API est en ADOPT. Pas d'action immédiate, mais à surveiller si cela introduit de nouvelles limites de taux ou conditions d'usage côté API.</div>
+
+    <h3>Semaine calme pour LangChain/LangGraph, Ollama, LlamaIndex, DSPy et les nouveaux modèles (GPT, Gemini, Mistral)</h3>
+    <p>Aucune release ou annonce datée précisément dans la fenêtre du 12 au 19 octobre pour ces frameworks et modèles. Pour mémoire (hors fenêtre) : un lancement GPT-6.1 Astra aurait été repoussé par OpenAI fin septembre pour des raisons de sécurité/alignement selon Reuters, et Gemini 4 (Google DeepMind) serait en phase de post-training sans date d'octobre confirmée — informations à prendre avec prudence, non vérifiées sur sources primaires.</p>
+  </section>
+
+  <!-- 2. Cloud & Infrastructure -->
+  <section>
+    <h2><span class="domain-num">2</span> Cloud &amp; Infrastructure</h2>
+
+    <h3>Fin de vie complète de Kubernetes 1.34 le 27 octobre <span class="signal signal-radar">🔔 Radar</span></h3>
+    <p>Kubernetes 1.34 est entré en maintenance fin août et atteindra sa fin de vie complète le 27 octobre 2026 (dans 8 jours) : au-delà de cette date, plus aucun correctif de sécurité ne sera backporté sur cette branche. Les branches activement supportées sont actuellement 1.35, 1.36 et 1.37.</p>
+    <div class="callout callout-radar">🔔 <strong>Radar :</strong> Kubernetes 1.30+ est en ADOPT. Vérifier que tous les clusters EKS sont bien sur une branche supportée (1.35+) avant le 27 octobre.</div>
+
+    <h3>Semaine calme pour Terraform, OpenTofu, Crossplane, Cilium, Docker et AWS (EKS/RDS/S3/SQS)</h3>
+    <p>Aucune release, CVE ou annonce produit datée précisément dans la fenêtre du 12 au 19 octobre pour ces technologies. AWS re:Invent (habituellement source de grosses annonces EKS) se tient fin novembre/début décembre, donc rien d'attendu avant cette échéance.</p>
+  </section>
+
+  <!-- 3. Langages & Runtimes -->
+  <section>
+    <h2><span class="domain-num">3</span> Langages &amp; Runtimes</h2>
+
+    <h3>Semaine calme pour PHP, Python, Go, Rust, Bun et l'écosystème Java (JDK, Spring Boot, Quarkus, GraalVM)</h3>
+    <p>Aucune nouvelle release datée précisément dans la fenêtre du 12 au 19 octobre pour ces technologies. Pour rappel (hors fenêtre), les RC de PHP 8.6.0/8.5.12/8.4.27 avaient été publiées le 6 octobre, avec une GA de PHP 8.6 toujours visée le 19 novembre — pas de nouvelle RC ni de GA constatée cette semaine. Le dernier roundup Java/Quarkus/GraalVM confirmé reste celui du 21 septembre.</p>
+  </section>
+
+  <!-- 4. DevOps & Observabilité -->
+  <section>
+    <h2><span class="domain-num">4</span> DevOps &amp; Observabilité</h2>
+
+    <h3>GitHub Actions — nouvel incident le 12 octobre, puis anomalie d'affichage des logs le 13 octobre <span class="signal signal-alert">⚠️ À surveiller</span></h3>
+    <p>Un tracker tiers (hors statut officiel GitHub) rapporte un incident le 12 octobre affectant Actions, Pull Requests et Issues, d'une durée d'environ 7h54. Le 13 octobre, GitHub a signalé une défaillance d'infrastructure provoquant des délais d'affichage des logs pour les workflows Actions (aucune perte de logs, workflows exécutés normalement). Cela s'ajoute aux incidents déjà signalés début octobre (1er et 7 octobre).</p>
+    <div class="callout callout-alert">⚠️ <strong>Vérification :</strong> GitHub Actions est notre CI/CD principal (ADOPT). Pas d'action immédiate si résolu, mais la fréquence des incidents en octobre justifie de surveiller le statut officiel et de vérifier les runs du 12-13 octobre si des pipelines ont semblé bloqués ou avec logs manquants.</div>
+
+    <h3>Semaine calme pour ArgoCD, OpenTelemetry, Grafana/Prometheus, Grafana Loki, Temporal.io, Renovate, Buildkite</h3>
+    <p>Aucune release ou annonce datée précisément dans la fenêtre du 12 au 19 octobre pour ces outils de notre radar DevOps.</p>
+  </section>
+
+  <!-- 5. Sécurité -->
+  <section>
+    <h2><span class="domain-num">5</span> Sécurité</h2>
+
+    <h3>Trois failles critiques/élevées dans React Server Components et Next.js, correctifs disponibles <span class="signal signal-alert">⚠️ Critique</span></h3>
+    <p>Netlify et l'équipe Next.js ont publié le 14 octobre trois avis de sécurité : une <strong>RCE critique</strong> (GHSA-673q-mjm6-r5xr) touchant les apps Next.js 16.x utilisant les Cache Components avec une fonction <code>use cache</code> retournant des typed arrays ; une <strong>RCE critique</strong> (GHSA-2464-fhr4-w9xw / CVE-2026-96889) dans le traitement SVG via la librairie <code>sharp</code> sur runtime Node.js/glibc Linux ; et un <strong>déni de service de sévérité élevée</strong> (GHSA-p3m5-59mp-jv5r) dans les Server Actions de App Router, versions 13.x à 16.x. Correctifs : <code>next</code> ≥ 15.5.28 ou 16.4.1, et paquets React Server Components mis à jour vers 19.0.9/19.1.10/19.2.9/19.3.1 selon la version utilisée. Netlify prévient que les deploy previews/branch deploys publics peuvent rester vulnérables tant qu'ils ne sont pas supprimés.</p>
+    <div class="callout callout-alert">⚠️ <strong>Action prioritaire :</strong> React 19 est en ADOPT — c'est notre stack frontend par défaut. Vérifier et mettre à jour en urgence toute application Next.js/React Server Components vers les versions corrigées, et purger/supprimer les deploy previews publics obsolètes.</div>
+
+    <h3>CISA ajoute 4 CVE au catalogue KEV (PAN-OS, Cisco Secure Email Gateway, Ahsay AhsayCBS) <span class="signal signal-alert">⚠️ Alerte</span></h3>
+    <p>CISA a ajouté le 14 octobre 4 vulnérabilités à son catalogue Known Exploited Vulnerabilities après confirmation d'exploitation active : <strong>CVE-2026-0322</strong> (PAN-OS, injection de code dans l'interface de management, CVSS 8.6, exécution de code arbitraire avec privilèges root par un attaquant authentifié), <strong>CVE-2026-76519</strong> (Cisco Secure Email Gateway, path traversal), et <strong>CVE-2026-105133</strong>/<strong>CVE-2026-105134</strong> (Ahsay AhsayCBS, authentification défaillante et injection de commande). Les agences fédérales américaines avaient jusqu'au 17 octobre pour corriger (directive BOD 26-04).</p>
+    <div class="callout callout-alert">⚠️ <strong>Vérification :</strong> aucun de ces produits n'est dans notre stack ADOPT. Vérifier simplement l'absence de PAN-OS/Cisco Secure Email Gateway/AhsayCBS exposés en périphérie de notre infrastructure.</div>
+
+    <h3>Rumeur d'une 4ᵉ vague du ver npm Shai-Hulud — date non confirmée <span class="signal signal-alert">⚠️ À confirmer</span></h3>
+    <p>Une session de conférence (Open Source Summit Europe, programmée le 9 octobre, donc en limite de fenêtre) évoque une « version 4 » du ver npm Shai-Hulud ayant « franchi une nouvelle limite », sans détail vérifiable. Un article non daté (ITPro) rapporte la découverte d'un paquet ayant contourné le scanning anti-malware de npm après un délai de publication de 111 jours. Aucune advisory officielle npm/GitHub datée dans la fenêtre du 12-19 octobre n'a pu être confirmée — à vérifier directement avant toute action.</p>
+    <div class="callout callout-alert">⚠️ <strong>Vigilance :</strong> TypeScript/React (ADOPT) dépendent de l'écosystème npm. Maintenir les politiques de cooldown/provenance (Sigstore) déjà en place en attendant confirmation.</div>
+
+    <h3>Semaine calme pour Trivy, Vault, Semgrep, Falco, Sigstore/Cosign, OWASP ZAP</h3>
+    <p>Aucune nouvelle release vérifiable datée précisément dans la fenêtre pour ces outils ADOPT/TRIAL/ASSESS de notre radar sécurité.</p>
+  </section>
+
+  <!-- 6. Frameworks & Architecture -->
+  <section>
+    <h2><span class="domain-num">6</span> Frameworks &amp; Architecture</h2>
+
+    <h3>Semaine calme pour Symfony, API Platform, Doctrine ORM, FrankenPHP et Pest PHP</h3>
+    <p>L'édition « A Week of Symfony » couvrant le 12-18 octobre n'était pas indexée au moment de la recherche — à vérifier directement sur <code>symfony.com/blog/category/a-week-of-symfony</code>. Aucune autre actualité vérifiable datée précisément dans la fenêtre pour ces technologies de notre radar Frameworks. Pour mémoire, la prochaine version majeure attendue est Symfony 8.2, prévue en novembre 2026.</p>
+  </section>
+
+  <!-- 7. Frontend & Expérience Dev -->
+  <section>
+    <h2><span class="domain-num">7</span> Frontend &amp; Expérience Dev</h2>
+
+    <h3>Trois failles critiques/élevées React/Next.js — voir domaine Sécurité <span class="signal signal-alert">⚠️ Critique</span></h3>
+    <p>Voir le détail complet dans la section Sécurité ci-dessus : trois avis de sécurité publiés le 14 octobre touchant React Server Components et Next.js (deux RCE critiques, un DoS de sévérité élevée). Correctifs disponibles pour <code>next</code> et les paquets React 19.</p>
+    <div class="callout callout-alert">⚠️ <strong>Action prioritaire :</strong> React 19 est en ADOPT, notre framework UI principal. Mettre à jour en priorité toute application concernée (voir versions correctives dans la section Sécurité).</div>
+
+    <h3>Semaine calme pour TypeScript, Vite, Bun, Astro, Hono et Effect-TS</h3>
+    <p>Aucune nouvelle release ou annonce datée précisément dans la fenêtre du 12 au 19 octobre pour ces technologies de notre radar Frontend. Pour mémoire (hors fenêtre), TypeScript 7.0 (portage natif en Go, builds 8 à 12x plus rapides) est en GA depuis le 8 juillet, sans nouvelle version mineure constatée cette semaine.</p>
+  </section>
+
+  <!-- 8. Data & Streaming -->
+  <section>
+    <h2><span class="domain-num">8</span> Data &amp; Streaming</h2>
+
+    <h3>Semaine calme pour PostgreSQL, Redis, Kafka, dbt, ClickHouse et Apache Iceberg</h3>
+    <p>Aucune release ou annonce datée précisément dans la fenêtre du 12 au 19 octobre pour ces technologies de notre radar Data. Pour mémoire (hors fenêtre), EDB avait publié le 6 octobre la première version LTS 26.8 de sa distribution ClickHouse (TRIAL, POC analytics dashboard en cours) — rien de nouveau à ce sujet cette semaine.</p>
+  </section>
+
+  <!-- 9. Finance Personnelle & Investissement -->
+  <section>
+    <h2><span class="domain-num finance">9</span> Finance Personnelle &amp; Investissement <span style="font-size:0.75rem; font-weight:400; color:#9a6b1f;">(informationnel, hors radar tech)</span></h2>
+
+    <h3>Budget 2027 : débat sur les recettes à l'Assemblée toute la semaine, vote solennel attendu le 20 octobre, risque de 49.3 <span class="signal signal-finance-alert">⚠️ Alerte finance</span></h3>
+    <p>Après le rejet de la partie « recettes » du PLF 2027 en commission des Finances le 9 octobre (31 voix contre, 3 pour, 2 abstentions), les députés examinent depuis le 12 octobre en séance plénière la version initiale du texte du gouvernement (les amendements adoptés en commission n'ayant qu'une valeur indicative). Les socialistes ont déposé une motion de rejet préalable sur la partie recettes, dont le vote est prévu le 20 octobre — si elle est adoptée, le texte serait transmis directement au Sénat. Le vote solennel sur l'ensemble de la première partie (recettes) est également prévu ce même 20 octobre, après les questions au gouvernement. Plusieurs sources évoquent un recours possible du Premier ministre à l'article 49.3. Sur le fond, les positions restent partagées : une source (Selectra) maintient que l'article visant la saisie fiscale des comptes-titres (PEA compris) est toujours dans le texte, tandis qu'une autre (Maxcompta) affirme qu'aucune disposition spécifique sur le PEA, le PER ou le PFU ne figure dans le texte initial — aucun amendement sur la fiscalité de l'épargne n'a été voté à ce stade dans la fenêtre de veille.</p>
+    <div class="callout callout-finance-alert">⚠️ Sujet à suivre de très près dès le 20 octobre : résultat de la motion de rejet préalable et du vote solennel sur la partie recettes, et éventuel recours au 49.3.</div>
+
+    <h3>CAC 40 en hausse sur la semaine, taux Livret A toujours sans confirmation officielle de révision exceptionnelle <span class="signal signal-finance">💰 Info finance</span></h3>
+    <p>Le CAC 40 a progressé sur les séances connues de la semaine : 7 832,88 points le 12 octobre, 7 827,63 le 13, 7 873,11 le 14, puis 7 934,70 le 15 octobre (données du 16 au 19 octobre non disponibles au moment de la rédaction) — soit une hausse d'environ +1,3 % sur les quatre premières séances. Côté Livret A, le taux reste à 1,70 % depuis le 1er août 2026 ; la Banque de France calcule le taux habituellement les 15 janvier et 15 juillet, avec une révision exceptionnelle théoriquement possible au 1er mai ou au 1er novembre en cas de choc d'inflation ou de marché monétaire. Aucun communiqué officiel de la Banque de France n'a été retrouvé pour une révision au 1er novembre 2026 ; un article évoquant un calcul à 2 % pour une révision au 15 octobre provient d'une source de fiabilité faible (rédigée avec assistance IA, non confirmée) — à traiter avec prudence tant qu'aucune annonce officielle n'est publiée.</p>
+
+    <h3>À surveiller la semaine prochaine</h3>
+    <p>Résultat du vote solennel sur la partie recettes du budget 2027 le 20 octobre (et suites : 49.3, motion de censure éventuelle), et confirmation ou non d'une révision exceptionnelle du taux du Livret A/LEP début novembre.</p>
+  </section>
+
+  <!-- Tableau récapitulatif -->
+  <section>
+    <h2>📊 Récapitulatif — Signaux Radar (domaines 1-8)</h2>
+    <p style="font-size:0.88rem; color:#6b7280; margin-bottom:0.8rem;">Signaux à discuter lors du prochain Tech Talk ou Brown Bag.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Signal</th>
+          <th>Technologie</th>
+          <th>Mouvement potentiel</th>
+          <th>Priorité</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>3 failles critiques/élevées React Server Components &amp; Next.js (RCE x2, DoS) publiées le 14 oct., correctifs disponibles</td>
+          <td>React 19 (ADOPT)</td>
+          <td>Mettre à jour en urgence next ≥ 15.5.28/16.4.1 et les paquets React 19.x corrigés ; purger les deploy previews publics</td>
+          <td class="priority-urgent">⚠️ Urgent</td>
+        </tr>
+        <tr>
+          <td>CISA ajoute 4 CVE au KEV le 14 oct. (PAN-OS CVE-2026-0322 CVSS 8.6, Cisco Secure Email Gateway, Ahsay AhsayCBS)</td>
+          <td>Hors stack — surface d'attaque périmétrique</td>
+          <td>Audit : vérifier l'absence de PAN-OS/Cisco Secure Email Gateway/AhsayCBS exposés</td>
+          <td class="priority-medium">Moyen</td>
+        </tr>
+        <tr>
+          <td>GitHub Actions — incident le 12 oct. (~7h54, Actions/PR/Issues) et anomalie de logs le 13 oct.</td>
+          <td>GitHub Actions (ADOPT)</td>
+          <td>Surveiller le statut officiel ; vérifier les pipelines sur ces fenêtres horaires</td>
+          <td class="priority-medium">Moyen</td>
+        </tr>
+        <tr>
+          <td>Fin de vie complète de Kubernetes 1.34 le 27 octobre</td>
+          <td>Kubernetes 1.30+ (ADOPT)</td>
+          <td>Vérifier que tous les clusters EKS sont sur une branche supportée (1.35+)</td>
+          <td class="priority-medium">Moyen</td>
+        </tr>
+        <tr>
+          <td>Rumeur non confirmée d'une 4ᵉ vague du ver npm Shai-Hulud (date incertaine)</td>
+          <td>Écosystème npm (TypeScript/React en ADOPT)</td>
+          <td>Maintenir cooldown/provenance (Sigstore) en attendant confirmation officielle</td>
+          <td class="priority-low">Faible — à confirmer</td>
+        </tr>
+        <tr>
+          <td>Anthropic annoncerait l'interdiction des usages abusifs persistants de Claude dès novembre 2026 (source secondaire)</td>
+          <td>Claude API (ADOPT)</td>
+          <td>Surveiller une éventuelle évolution des conditions d'usage de l'API</td>
+          <td class="priority-low">Faible</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Sources -->
+  <section>
+    <h2>🔗 Sources</h2>
+    <ul class="sources-list">
+      <li><a href="https://www.mind-verse.de/ressourcen/news/thema/anthropic-claude" target="_blank">Mind-Verse — Anthropic interdirait les usages abusifs persistants de Claude dès novembre 2026</a></li>
+      <li><a href="https://af.net/cn/realtime/anthropics-claude-opus-5-5-tops-october-2026-proprietary-llm-rankings/" target="_blank">AF.NET — Claude Opus 5.5 en tête des classements LLM propriétaires, octobre 2026</a></li>
+      <li><a href="https://kubernetes.io/releases/" target="_blank">Kubernetes — Page des releases et fins de vie des branches</a></li>
+      <li><a href="https://uptimerobot.com/is-it-down/github/2026-10-05/" target="_blank">UptimeRobot — Historique des incidents GitHub, octobre 2026</a></li>
+      <li><a href="https://pulsetic.com/status/github/incidents/148118/" target="_blank">Pulsetic — Incident GitHub Status #148118</a></li>
+      <li><a href="https://www.netlify.com/changelog/2026-10-14-nextjs-react-security-vulnerabilities" target="_blank">Netlify — Security Update: Next.js and React vulnerabilities (October 2026)</a></li>
+      <li><a href="https://docs.pantheon.io/release-notes/2026/10/nextjs-security-release" target="_blank">Pantheon — Next.js security release, octobre 2026</a></li>
+      <li><a href="https://thearabianpost.com/react-flaw-exposes-next-js-servers-to-service-disruption/" target="_blank">The Arabian Post — Une faille React expose les serveurs Next.js à une interruption de service</a></li>
+      <li><a href="https://content.govdelivery.com/accounts/USDHSCISA/bulletins/4298cb9" target="_blank">CISA — Ajout de vulnérabilités exploitées au catalogue KEV, octobre 2026</a></li>
+      <li><a href="https://threatcluster.io/cluster/cisa-adds-critical-vulnerabilities-to-kev-catalog-amid-activ-f5c0060c" target="_blank">ThreatCluster — CISA ajoute des vulnérabilités critiques au catalogue KEV</a></li>
+      <li><a href="https://osselceu2026.sched.com/event/2RajY" target="_blank">Open Source Summit Europe 2026 — Session sur la famille de vers npm Shai-Hulud</a></li>
+      <li><a href="https://www.itpro.com/security/malware/is-shai-hulud-back-researchers-spot-wormy-boy-slipping-past-npm-malware-scanning-features" target="_blank">ITPro — Le ver npm Shai-Hulud contourne le scanning anti-malware de npm</a></li>
+      <li><a href="https://www.abcbourse.com/marches/agenda-des-societes-pour-la-journee_703949" target="_blank">ABC Bourse — Cotations CAC 40, semaine du 12-15 octobre 2026</a></li>
+      <li><a href="https://www.banque-france.fr/system/files/2026-07/CP-Livret-A-LEP-Juillet-2026.pdf" target="_blank">Banque de France — Communiqué de presse Livret A / LEP, juillet 2026</a></li>
+      <li><a href="https://eco3min.fr/taux-livret-a-date-revision/" target="_blank">Eco3min — Taux du Livret A : dates de révision et formule de calcul</a></li>
+      <li><a href="https://stephanelarue.com/?p=202254" target="_blank">StephaneLarue.com — Livret A : calcul théorique pour une révision au 15 octobre 2026 (source à faible fiabilité)</a></li>
+      <li><a href="https://www.legifiscal.fr/actualites-fiscales/4684-plf-2027-commission-finances-rejette-partie-recettes-creuse-deficit-environ-10-md.html" target="_blank">Legifiscal — La commission des Finances rejette la partie recettes du PLF 2027</a></li>
+      <li><a href="https://fiscalonline.com/outils-fiscaux/partie-recettes-plf-2027-rejetee-commission-place-seance-publique" target="_blank">Fiscal Online — Partie recettes du PLF 2027 rejetée en commission, direction la séance publique</a></li>
+      <li><a href="https://www.leclubdesjuristes.com/?p=17773" target="_blank">Le Club des Juristes — Budget 2027 : le projet arrive devant l'Assemblée nationale le 13 octobre</a></li>
+      <li><a href="https://selectra.info/finance/actualites/marche/dette-fiscale-budget-2027-pea-vente-forcee" target="_blank">Selectra — Budget 2027, saisie fiscale des comptes-titres et du PEA</a></li>
+      <li><a href="https://www.maxcompta.com/blogs/investissement/plf-2027-assurance-vie-pea-transmission" target="_blank">Maxcompta — PLF 2027 : ce qui change pour l'assurance-vie, le PEA et les dons</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  Veille générée automatiquement par Claude Code · Radar Q2 2026 · Prochain review trimestriel : première semaine de décembre 2026
+</footer>
+
+</body>
+</html>
