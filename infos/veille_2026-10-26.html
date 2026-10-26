@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veille Technologique — 26 octobre 2026</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #1a1a2e;
+      background: #f5f6fa;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      color: #fff;
+      padding: 2rem 2.5rem;
+    }
+    header h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.3rem; }
+    header .meta { font-size: 0.9rem; color: #a8b2d8; }
+    header .perimeter {
+      display: inline-block;
+      margin-top: 0.8rem;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 20px;
+      padding: 0.25rem 0.8rem;
+      font-size: 0.82rem;
+      color: #c8d3f5;
+    }
+
+    main { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+    /* Alert banner */
+    .alert-banner {
+      background: #fff3cd;
+      border-left: 4px solid #e6a817;
+      border-radius: 6px;
+      padding: 0.8rem 1.2rem;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+    }
+    .alert-banner strong { color: #856404; }
+
+    section {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      padding: 1.5rem 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #16213e;
+      border-bottom: 2px solid #e8eaf0;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.2rem;
+    }
+    h2 .domain-num {
+      display: inline-block;
+      background: #16213e;
+      color: #fff;
+      border-radius: 50%;
+      width: 1.6rem;
+      height: 1.6rem;
+      font-size: 0.78rem;
+      line-height: 1.6rem;
+      text-align: center;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+    }
+    h2 .domain-num.finance { background: #b45309; }
+
+    h3 {
+      font-size: 0.97rem;
+      font-weight: 600;
+      color: #0f3460;
+      margin: 1rem 0 0.3rem;
+    }
+
+    p { margin-bottom: 0.6rem; }
+
+    /* Signal badges */
+    .signal {
+      display: inline-block;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.15rem 0.55rem;
+      margin-left: 0.4rem;
+      vertical-align: middle;
+    }
+    .signal-radar { background: #e8f4fd; color: #0369a1; border: 1px solid #bae6fd; }
+    .signal-alert { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
+    .signal-finance { background: #fef9c3; color: #92400e; border: 1px solid #fde68a; }
+    .signal-finance-alert { background: #ffedd5; color: #9a3412; border: 1px solid #fed7aa; }
+
+    /* Callout boxes */
+    .callout {
+      border-radius: 6px;
+      padding: 0.7rem 1rem;
+      margin: 0.6rem 0;
+      font-size: 0.9rem;
+    }
+    .callout-radar {
+      background: #eff6ff;
+      border-left: 3px solid #3b82f6;
+      color: #1e40af;
+    }
+    .callout-alert {
+      background: #fff1f2;
+      border-left: 3px solid #f43f5e;
+      color: #be123c;
+    }
+    .callout-action {
+      background: #f0fdf4;
+      border-left: 3px solid #22c55e;
+      color: #15803d;
+    }
+    .callout-finance {
+      background: #fffbeb;
+      border-left: 3px solid #d97706;
+      color: #92400e;
+    }
+    .callout-finance-alert {
+      background: #fff7ed;
+      border-left: 3px solid #ea580c;
+      color: #9a3412;
+    }
+
+    /* Summary table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin-top: 0.8rem;
+    }
+    th {
+      background: #16213e;
+      color: #fff;
+      text-align: left;
+      padding: 0.6rem 0.8rem;
+      font-weight: 600;
+    }
+    td { padding: 0.55rem 0.8rem; border-bottom: 1px solid #e8eaf0; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: #f8f9fc; }
+
+    .priority-urgent { color: #dc2626; font-weight: 700; }
+    .priority-medium { color: #d97706; font-weight: 600; }
+    .priority-low { color: #16a34a; }
+
+    /* Sources */
+    .sources-list { list-style: none; padding: 0; }
+    .sources-list li { padding: 0.3rem 0; border-bottom: 1px solid #f0f0f0; }
+    .sources-list li:last-child { border-bottom: none; }
+    .sources-list a { color: #0369a1; text-decoration: none; font-size: 0.88rem; }
+    .sources-list a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      color: #9ca3af;
+      font-size: 0.82rem;
+      padding: 2rem 1.5rem;
+    }
+
+    code {
+      background: #f1f5f9;
+      border-radius: 3px;
+      padding: 0.1rem 0.35rem;
+      font-size: 0.88em;
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      color: #0f3460;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Veille Technologique</h1>
+  <div class="meta">Générée le <strong>26 octobre 2026</strong> · par Claude Code</div>
+  <span class="perimeter">📅 Périmètre : 19 – 26 octobre 2026 (7 jours)</span>
+</header>
+
+<main>
+
+  <!-- Alert banner -->
+  <div class="alert-banner">
+    ⚠️ <strong>Semaine marquée par plusieurs urgences de sécurité touchant directement notre stack ADOPT.</strong> La Python Software Foundation a publié en urgence le 21 octobre les versions 3.14.9/3.13.17/3.15.1 pour retirer des bundles pip/certifi le certificat racine CA emSign/eMudhra compromis (risque de MITM TLS) — Python 3.12+ étant en ADOPT, il faut mettre à jour pip/certifi dans tous les environnements virtuels du parc, quelle que soit la version mineure installée. Côté supply chain npm, une nouvelle vague de 8 paquets malveillants a été confirmée le 26 octobre (cluster <code>@s4yhiitestpoc/*</code> et deux faux polyfills CSS), classés en compromission totale — à vérifier dans les lockfiles (TypeScript/React en ADOPT). Kubernetes 1.34 (ADOPT) atteint sa fin de vie complète <strong>demain, le 27 octobre</strong> : vérifier en urgence que tous les clusters EKS sont bien migrés vers une branche supportée (1.35+). GitHub Actions (ADOPT, notre CI/CD principal) a connu un nouvel incident de disponibilité le 19 octobre (Actions/Pages/Webhooks, ~1h07) — le 6ᵉ du mois d'octobre selon les trackers tiers. Côté finance perso : le vote solennel sur la partie recettes du budget 2027 était prévu le 20 octobre (résultat non confirmé à la rédaction) et le vote sur le PLFSS est attendu le 27 octobre, avec un risque persistant de recours à l'article 49.3 ; les taux de crédit immobilier poursuivent leur hausse et le Livret A reste à 1,70 % sans annonce officielle de révision au 1er novembre, malgré un calcul théorique à 2 % évoqué par une source non officielle.
+  </div>
+
+  <!-- 1. IA / ML -->
+  <section>
+    <h2><span class="domain-num">1</span> Intelligence Artificielle / ML</h2>
+
+    <h3>Ollama 0.40.10 publié le 23 octobre <span class="signal signal-radar">🔔 Radar</span></h3>
+    <p>Une entrée Wikipédia liste Ollama 0.40.10 comme version stable, datée du 23 octobre 2026. Aucune note de version détaillée retrouvée pour ce correctif précis (seules les notes de la 0.17, hors fenêtre, mentionnent jusqu'à +40 % de vitesse de prompt processing et +18 % de génération de tokens sur GPU NVIDIA) — à vérifier directement sur github.com/ollama/ollama/releases avant diffusion.</p>
+    <div class="callout callout-radar">🔔 <strong>Radar :</strong> Ollama est en TRIAL. Mise à jour mineure, pas d'action urgente ; vérifier le changelog officiel au prochain cycle.</div>
+
+    <h3>Semaine calme pour Claude API, LangChain/LangGraph, pgvector, DSPy, LlamaIndex, MLflow, Instructor, OpenAI Realtime API et Claude Computer Use</h3>
+    <p>Aucune annonce officielle datée précisément entre le 19 et le 26 octobre retrouvée sur les sources primaires (anthropic.com/news, changelogs GitHub/PyPI) pour ces technologies de notre radar IA. Pour mémoire, hors fenêtre : LangChain 1.4/LangGraph 1.2 (approvals par appel, MCP intégré) et llama-index-workflows 2.26.0 (11 octobre) avaient été rapportés la semaine précédente ; un rapport non confirmé évoquait une interdiction par Anthropic des usages abusifs persistants de Claude à partir de novembre 2026 (source secondaire uniquement, toujours sans confirmation officielle). Le déploiement de GPT-6 par OpenAI date du 7 octobre (hors fenêtre) et Gemini 4 (Google DeepMind) reste non lancé, sans date confirmée en octobre.</p>
+  </section>
+
+  <!-- 2. Cloud & Infrastructure -->
+  <section>
+    <h2><span class="domain-num">2</span> Cloud &amp; Infrastructure</h2>
+
+    <h3>Fin de vie imminente de Kubernetes 1.34 — échéance demain, 27 octobre <span class="signal signal-radar">🔔 Radar</span></h3>
+    <p>Confirmation officielle sur kubernetes.io : Kubernetes 1.34 est entré en maintenance le 27 août 2026 (correctifs de sécurité critiques uniquement) et atteint sa fin de vie complète <strong>le 27 octobre 2026</strong>, soit demain au moment de la rédaction. Au-delà de cette date, plus aucun correctif de sécurité ne sera backporté sur cette branche. Les branches activement supportées sont 1.35, 1.36 et 1.37 — un cycle de patchs (1.37.2, 1.36.6, 1.35.10) a par ailleurs été publié le 13 octobre (hors fenêtre).</p>
+    <div class="callout callout-radar">🔔 <strong>Radar :</strong> Kubernetes 1.30+ est en ADOPT. Dernier rappel avant l'échéance : vérifier dès aujourd'hui que tous les clusters EKS sont bien sur une branche supportée (1.35+).</div>
+
+    <h3>Semaine calme pour Terraform, OpenTofu, Crossplane, Cilium, Docker, Nomad, Fly.io et Dagger</h3>
+    <p>Aucune release, CVE ou annonce produit datée précisément dans la fenêtre du 19 au 26 octobre pour ces technologies. Côté CI/CD, un nouvel incident GitHub Actions (Actions/Pages/Webhooks, ~1h07) a été signalé le 19 octobre — voir le détail complet dans la section DevOps &amp; Observabilité ci-dessous. Pour mémoire (hors fenêtre) : la dernière version stable connue d'OpenTofu reste 1.12.2 (juin 2026) ; la CVE Cilium CVE-2026-53935 (hijacking de trafic cross-namespace) date de début juillet 2026, pas de nouvelle faille cette semaine ; dernière annonce Docker notable le 24 septembre (Cloud Sandboxes). AWS re:Invent (habituellement source de grosses annonces EKS) se tient fin novembre/début décembre, rien attendu avant cette échéance.</p>
+  </section>
+
+  <!-- 3. Langages & Runtimes -->
+  <section>
+    <h2><span class="domain-num">3</span> Langages &amp; Runtimes</h2>
+
+    <h3>Python — mise à jour de sécurité urgente 3.14.9 / 3.13.17 / 3.15.1 suite à l'incident CA eMudhra/emSign <span class="signal signal-alert">⚠️ Sécurité</span></h3>
+    <p>Le 21 octobre 2026, la Python Software Foundation a publié en urgence les versions 3.14.9, 3.13.17 et 3.15.1, dont l'objectif principal est de mettre à jour pip embarqué (vers 26.2.2, intégrant certifi 2026.10.19) afin de retirer le certificat racine CA emSign/eMudhra des bundles de confiance. Un fil officiel sur discuss.python.org précise qu'un incident de sécurité touchant les certificats intermédiaires eMudhra a nécessité ce retrait, et avertit que l'absence de mise à jour expose les clients TLS (y compris les accès à python.org et pypi.org) à des attaques de type monstre-in-the-middle. Une source secondaire (compromission de 8 clés privées CA intermédiaires) n'est pas confirmée par une source primaire — à traiter avec prudence sur ce point précis.</p>
+    <div class="callout callout-alert">⚠️ <strong>Action :</strong> Python 3.12+ est en ADOPT. Même si le correctif cible nommément 3.14/3.13/3.15, l'action recommandée (mise à jour de pip et certifi dans tous les environnements virtuels existants) s'applique à toute installation Python du parc, quelle que soit la version mineure, pour éviter un risque MITM via le certificat CA compromis.</div>
+
+    <h3>Semaine calme pour PHP, Symfony, TypeScript, Go, React 19, Bun, FrankenPHP, Rust, Gleam, Effect-TS et l'écosystème Java (JDK, Spring Boot, Quarkus, GraalVM, Maven/Gradle)</h3>
+    <p>Aucune release ni annonce confirmée datée précisément entre le 19 et le 26 octobre 2026 pour ces technologies. Pour mémoire, hors fenêtre : PHP 8.6.0 reste en phase RC (RC3 le 6-8 octobre), GA toujours visée le 19 novembre, RC4 attendue le 5 novembre ; TypeScript 7.0 (réécriture native Go) reste en bêta ; Rust 1.96.1 (30 juin) est la dernière version confirmée sur source primaire ; côté Java, le dernier roundup confirmé (5 octobre) évoque des JEPs JDK 28 passés à « Proposed to Target », et Quarkus 3.40.1 (30 septembre) reste la version stable la plus récente trouvée.</p>
+  </section>
+
+  <!-- 4. DevOps & Observabilité -->
+  <section>
+    <h2><span class="domain-num">4</span> DevOps &amp; Observabilité</h2>
+
+    <h3>GitHub Actions — nouvel incident critique le 19 octobre (Actions, Pages, Webhooks) <span class="signal signal-alert">⚠️ À surveiller</span></h3>
+    <p>Selon des trackers de statut tiers (hors page officielle githubstatus.com), un incident critique a dégradé la disponibilité d'Actions, Pages et Webhooks le 19 octobre 2026, avec des retards de traitement des workflows, des builds de sites et de livraison des webhooks pendant environ 1h07 (15h49-16h56). C'est le 6ᵉ incident Actions signalé sur le mois d'octobre par ces trackers (après le 1er, 5, 7, 12 et 13 octobre). Aucun nouvel incident n'a été identifié entre le 20 et le 26 octobre.</p>
+    <div class="callout callout-alert">⚠️ <strong>Vérification :</strong> GitHub Actions est notre CI/CD principal (ADOPT). La fréquence des incidents en octobre continue de justifier une surveillance du statut officiel ; vérifier si des runs du 19 octobre ont semblé bloqués ou avec logs/webhooks retardés.</div>
+
+    <h3>Semaine calme pour ArgoCD, OpenTelemetry, Grafana/Prometheus, Grafana Loki, Temporal.io, Renovate, SOPS/age, Buildkite, Dagger, Earthly, VictoriaMetrics et Beyla</h3>
+    <p>Aucune release ou annonce datée précisément entre le 19 et le 26 octobre 2026 pour ces outils de notre radar DevOps/Observabilité. Les dernières releases ArgoCD connues (3.5.5, 3.4.11, 3.3.16) et Grafana (13.2.4) datent du 12-13 octobre, donc hors fenêtre stricte ; la prochaine release mineure ArgoCD (3.6) est attendue vers novembre. Pour mémoire, Temporal avait levé 550M$ (série E, valorisation 12,55 Md$) mi-septembre.</p>
+  </section>
+
+  <!-- 5. Sécurité -->
+  <section>
+    <h2><span class="domain-num">5</span> Sécurité</h2>
+
+    <h3>Nouvelle vague de paquets npm malveillants confirmés le 26 octobre <span class="signal signal-alert">⚠️ Urgent</span></h3>
+    <p>Huit nouveaux paquets npm ont été classés malveillants le 26 octobre par des avis OSSF/OSV (identifiants MAL-2026-18302 à 18314) : <code>@s4yhiitestpoc/scan-https-dualuse-e</code>, <code>@s4yhiitestpoc/r2-control</code>, <code>@s4yhiitestpoc/r2-https-dualuse</code>, <code>@s4yhiitestpoc/r2-echo</code>, <code>@s4yhiitestpoc/r2-dns</code>, <code>@s4yhiitestpoc/scan-dns-c</code>, <code>css-flexgap-shim</code> et <code>css-hnhxwd-polyfill</code> (ces deux derniers se faisant passer pour des polyfills CSS légitimes). Les avis les classent en « compromission totale » et recommandent de considérer toute machine les ayant installés comme compromise ; le détail du payload n'est pas encore documenté publiquement. Pour mémoire, hors fenêtre : le SDK TypeScript <code>tensorlake</code> (v0.5.144, retiré) avait été compromis début octobre par le ver Shai-Hulud, ciblant notamment les credentials npm/GitHub/AWS/Vault/Kubernetes.</p>
+    <div class="callout callout-alert">⚠️ <strong>Action :</strong> TypeScript/React (ADOPT) dépendent de l'écosystème npm. Vérifier les lockfiles contre ces noms de paquets (attention aux imitations de polyfills CSS), scanner les dépendances et renforcer les politiques de cooldown/provenance (Sigstore en TRIAL) sur les nouvelles dépendances.</div>
+
+    <h3>Kubernetes 1.34 — fin de vie demain (27 octobre), rappel <span class="signal signal-radar">🔔 Radar</span></h3>
+    <p>Voir le détail complet dans la section Cloud &amp; Infrastructure ci-dessus : Kubernetes 1.34 (ADOPT) atteint sa fin de vie complète demain, 27 octobre — plus aucun correctif de sécurité ne sera backporté sur cette branche au-delà de cette date.</p>
+    <div class="callout callout-radar">🔔 <strong>Radar :</strong> vérification urgente à faire dès aujourd'hui sur les clusters EKS (migration vers 1.35+).</div>
+
+    <h3>CSA Singapour réitère son alerte sur les failles critiques Next.js/React du 14 octobre</h3>
+    <p>L'autorité de cybersécurité de Singapour (CSA) a publié le 20 octobre une alerte (AL-2026-148) reprenant les deux failles critiques (CVSS v4.0 9,5/10) révélées le 14 octobre dans Next.js/React Server Components (RCE SVG via <code>sharp</code>, RCE Cache Components) — voir la veille de la semaine précédente pour le détail complet. Aucune nouvelle faille ni aucun nouveau correctif publié cette semaine ; il s'agit d'un rappel officiel incitant à patcher sans délai.</p>
+
+    <h3>Semaine calme pour Trivy, Vault, Dependabot/Renovate, OWASP ZAP, SBOM/CycloneDX, Semgrep, Falco, Sigstore/Cosign, Tetragon, OpenFGA et SLSA</h3>
+    <p>Aucune release, CVE ou avis daté précisément dans la fenêtre du 19 au 26 octobre pour ces outils de notre radar Sécurité. Un nouvel incident GitHub Actions a aussi été signalé le 19 octobre — voir le détail dans la section DevOps &amp; Observabilité. Côté PyPI, aucun nouveau paquet malveillant confirmé cette semaine (dernière campagne documentée : forks Pyrogram trojanisés visant les développeurs de bots Telegram, en juin 2026, hors fenêtre).</p>
+  </section>
+
+  <!-- 6. Frameworks & Architecture -->
+  <section>
+    <h2><span class="domain-num">6</span> Frameworks &amp; Architecture</h2>
+
+    <h3>Semaine calme pour Symfony, API Platform, Doctrine ORM, FrankenPHP, Pest PHP et l'architecture microservices/event-driven</h3>
+    <p>Aucune publication datée précisément dans la fenêtre du 19 au 26 octobre n'a été retrouvée pour ces technologies. L'édition « A Week of Symfony » de cette semaine n'est pas encore indexée au moment de la recherche (dernière édition confirmée : #1024, 10-16 août). Pour mémoire, hors fenêtre : Symfony 8.2 reste prévue pour novembre 2026 (nécessite PHP 8.4+), avec au programme des accesseurs/mutateurs PropertyInfo par attributs et le support du Cache-Control RFC 9213 dans HttpFoundation — rien de nouveau cette semaine sur ce chantier. FrankenPHP (ASSESS) en est à la version 1.13.1 (corrective) et Doctrine ORM 3 (ADOPT) reste à sa dernière version stable 3.6.7 (mai 2026) ; une version 5 de Pest PHP (TRIAL) serait annoncée avec analyse d'impact de tests et vérification par agent IA, mais aucune date précise n'a pu être confirmée dans la fenêtre — à vérifier sur les pages officielles avant toute communication.</p>
+  </section>
+
+  <!-- 7. Frontend & Expérience Dev -->
+  <section>
+    <h2><span class="domain-num">7</span> Frontend &amp; Expérience Dev</h2>
+
+    <h3>Bun 1.4.4 — version patch possible le 22 octobre (information à confirmer) <span class="signal signal-radar">🔔 Radar</span></h3>
+    <p>Une seule source secondaire (Wikipédia) date une version Bun 1.4.4 au 22 octobre 2026, dans la continuité de la série 1.4 (sortie en août, réécriture du runtime de Zig vers Rust, démarrage 50 % plus rapide sur Linux, Bun.WebView, Bun.Image, Bun.markdown, Bun.cron()). Aucune note de version officielle retrouvée sur bun.com/blog ou le repo GitHub pour confirmer le contenu précis de ce patch — à vérifier avant diffusion large.</p>
+    <div class="callout callout-radar">🔔 <strong>Radar :</strong> Bun 1.x est en TRIAL. Pas d'action immédiate ; vérifier <code>bun upgrade</code> et le changelog officiel au prochain cycle si la version 1.4.4 est confirmée.</div>
+
+    <h3>Semaine calme pour React 19, TypeScript, Vite, Astro 4, Hono et Effect-TS</h3>
+    <p>Aucune release, annonce ou actualité datée précisément entre le 19 et le 26 octobre 2026 n'a été retrouvée pour ces technologies de notre radar Frontend. Pour mémoire, hors fenêtre : TypeScript 7.0 (portage Go, ~10x plus rapide) est en GA depuis l'été 2026 ; Vite 8 a adopté Rolldown (bundler Rust unifié) comme bundler par défaut ; aucune actualité significative Astro, Hono ou Effect-TS n'a été retrouvée au-delà de la documentation générale du projet. Les trois failles critiques/élevées React Server Components/Next.js publiées le 14 octobre restent hors de la fenêtre stricte et déjà traitées (voir domaine Sécurité) ; aucune nouvelle faille React/Next.js cette semaine.</p>
+  </section>
+
+  <!-- 8. Data & Streaming -->
+  <section>
+    <h2><span class="domain-num">8</span> Data &amp; Streaming</h2>
+
+    <h3>DuckDB 2.0.0 LTS « Cinnamon Teal » publiée le 21 octobre <span class="signal signal-radar">🔔 Radar</span></h3>
+    <p>DuckDB a publié le 21 octobre sa version 2.0.0, première LTS de la branche 2.x, avec un protocole client-serveur « Quack », de l'I/O asynchrone pour les requêtes object-storage, un nouveau type <code>VARIANT</code>, un « agent mode », des triggers et un nouveau parseur SQL basé sur PEG. Support annoncé jusqu'à fin octobre 2027 au minimum ; les branches 1.5 et 1.4 LTS arrivent en fin de vie respectivement le 1er et le 17 novembre 2026. Source secondaire (reprise presse) non recoupée directement sur duckdb.org/news au moment de la rédaction — à vérifier.</p>
+    <div class="callout callout-radar">🔔 <strong>Radar :</strong> DuckDB est en ASSESS. Cette LTS 2.0 renforce sa maturité pour l'analytics embarqué/local — pourrait justifier un POC et une proposition de passage en TRIAL lors d'un prochain Tech Talk.</div>
+
+    <h3>Semaine calme pour PostgreSQL, Redis, Kafka, dbt, ClickHouse, Apache Iceberg, Redpanda et RisingWave</h3>
+    <p>Aucun fait daté précisément entre le 19 et le 26 octobre retrouvé pour ces technologies. Pour mémoire, hors fenêtre : la RC1 de PostgreSQL 19 est sortie le 15 octobre, GA désormais visée au 19 novembre ; Apache Kafka 4.2.2 date du 29 septembre ; le dernier changelog ClickHouse confirmé (26.8) remonte à la newsletter de septembre ; aucune actualité produit datée trouvée pour dbt Labs, Redpanda ou RisingWave sur la fenêtre.</p>
+  </section>
+
+  <!-- 9. Finance Personnelle & Investissement -->
+  <section>
+    <h2><span class="domain-num finance">9</span> Finance Personnelle &amp; Investissement <span style="font-size:0.75rem; font-weight:400; color:#9a6b1f;">(informationnel, hors radar tech)</span></h2>
+
+    <h3>Budget 2027 : vote solennel sur les recettes prévu le 20 octobre, résultat non confirmé ; PLFSS voté le 27 octobre <span class="signal signal-finance-alert">⚠️ Alerte finance</span></h3>
+    <p>La motion de rejet préalable déposée par les députés socialistes sur la partie « recettes » du PLF 2027 a été repoussée le 13 octobre (236 voix contre, 149 pour) — pour mémoire, hors fenêtre de veille —, le Rassemblement National ayant voté contre comme annoncé par son porte-parole budgétaire. Le vote solennel sur l'ensemble de cette première partie (recettes) était programmé le mardi 20 octobre, après les questions au gouvernement : aucune source fiable confirmant le résultat exact de ce scrutin n'a pu être retrouvée au moment de la rédaction — à vérifier directement sur le site de l'Assemblée nationale. Le volet recettes du budget de la Sécurité sociale (PLFSS) doit de son côté faire l'objet d'un vote solennel le 27 octobre, juste après cette fenêtre de veille. Le Premier ministre Sébastien Lecornu n'a toujours pas exclu un recours à l'article 49.3 en cas de blocage parlementaire ; aucune décision en ce sens n'est confirmée à ce stade.</p>
+    <div class="callout callout-finance-alert">⚠️ À suivre dès le prochain cycle : résultat effectif du vote du 20 octobre sur les recettes, issue du vote PLFSS du 27 octobre, et éventuel recours au 49.3.</div>
+
+    <h3>Livret A : un calcul théorique à 2 % pour une révision au 1er novembre, aucune décision officielle publiée <span class="signal signal-finance">💰 Info finance</span></h3>
+    <p>Le taux du Livret A reste fixé à 1,70 % (en vigueur depuis le 1er août 2026). Une source secondaire (non officielle) indique que l'application stricte de la formule de calcul (inflation hors tabac + €STR) donnerait un résultat théorique de 2 % lors de la fenêtre de révision du 15 octobre, pour une entrée en vigueur possible au 1er novembre — mais le ministre de l'Économie n'est pas tenu de suivre ce calcul (comme en janvier 2026, où la formule donnait 1,4 % et le taux retenu avait été de 1,5 %). Aucun communiqué de la Banque de France ni du ministère de l'Économie confirmant une révision au 1er novembre n'a été retrouvé à ce jour — information à traiter avec prudence tant qu'aucune annonce officielle n'est publiée.</p>
+
+    <h3>PEA : plafond inchangé, l'article du PLF 2027 sur la saisie fiscale des comptes-titres/PEA toujours non voté <span class="signal signal-finance">💰 Info finance</span></h3>
+    <p>Le plafond du PEA reste à 150 000 € (225 000 € en cumulant avec un PEA-PME), sans changement annoncé pour 2027. Les sources divergent sur le contenu du PLF 2027 : l'une indique que le texte déposé ne contient aucune disposition sur le PEA, le PER ou le PFU ; une autre rapporte un article du projet (non voté à ce stade) qui étendrait les procédures de saisie fiscale aux comptes-titres et PEA en cas de dette fiscale, avec des frais plafonnés à 10 % de la dette. Ces dispositions restent au stade de proposition, susceptibles d'être amendées ou supprimées lors de la suite de la discussion parlementaire — à confirmer sur le texte définitivement adopté.</p>
+
+    <h3>Crédit immobilier : la hausse des taux se poursuit en octobre <span class="signal signal-finance">💰 Info finance</span></h3>
+    <p>Les baromètres d'octobre confirment une poursuite de la hausse des taux de crédit immobilier amorcée depuis l'été, portée par la remontée de l'OAT 10 ans : environ 3,50 % sur 15 ans, 3,55-3,73 % sur 20 ans et 3,75 % sur 25 ans selon les courtiers (Pretto, Empruntis, MySweetImmo), avec des barèmes bancaires bruts (avant négociation) qui s'approchent de 4 % chez certains établissements (Meilleurtaux). Pour mémoire, hors fenêtre stricte, le taux d'usure (TAEG plafond, prêts ≥ 20 ans) avait déjà été relevé de 5,29 % à 5,40 % au 1er octobre. Aucune actualité réglementaire nouvelle sur l'assurance-vie n'a été identifiée dans la fenêtre : les prélèvements sociaux restent à 17,2 %, et les hypothèses de hausse de la flat tax (PFU) demeurent des rumeurs non confirmées.</p>
+
+    <h3>À surveiller la semaine prochaine</h3>
+    <p>Résultat effectif du vote solennel du 20 octobre sur la partie recettes du budget 2027 et issue du vote PLFSS du 27 octobre (49.3 ou non), ainsi qu'une éventuelle annonce officielle de la Banque de France/du ministère de l'Économie sur le taux du Livret A et du LEP applicable au 1er novembre.</p>
+  </section>
+
+  <!-- Tableau récapitulatif -->
+  <section>
+    <h2>📊 Récapitulatif — Signaux Radar (domaines 1-8)</h2>
+    <p style="font-size:0.88rem; color:#6b7280; margin-bottom:0.8rem;">Signaux à discuter lors du prochain Tech Talk ou Brown Bag.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Signal</th>
+          <th>Technologie</th>
+          <th>Mouvement potentiel</th>
+          <th>Priorité</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Nouvelle vague de 8 paquets npm malveillants confirmés le 26 oct. (@s4yhiitestpoc/*, css-flexgap-shim, css-hnhxwd-polyfill)</td>
+          <td>Écosystème npm (TypeScript/React en ADOPT)</td>
+          <td>Vérifier les lockfiles, scanner les dépendances, renforcer cooldown/provenance (Sigstore)</td>
+          <td class="priority-urgent">⚠️ Urgent</td>
+        </tr>
+        <tr>
+          <td>Fin de vie complète de Kubernetes 1.34 le 27 octobre (demain)</td>
+          <td>Kubernetes 1.30+ (ADOPT)</td>
+          <td>Vérifier en urgence que tous les clusters EKS sont sur une branche supportée (1.35+)</td>
+          <td class="priority-urgent">⚠️ Urgent</td>
+        </tr>
+        <tr>
+          <td>Publication en urgence le 21 oct. de Python 3.14.9/3.13.17/3.15.1 pour retirer le certificat CA emSign/eMudhra compromis (risque MITM TLS)</td>
+          <td>Python 3.12+ (ADOPT)</td>
+          <td>Mettre à jour pip et certifi dans tous les environnements virtuels du parc, quelle que soit la version mineure</td>
+          <td class="priority-urgent">⚠️ Urgent</td>
+        </tr>
+        <tr>
+          <td>Nouvel incident critique GitHub Actions/Pages/Webhooks le 19 oct. (~1h07, 6ᵉ incident du mois)</td>
+          <td>GitHub Actions (ADOPT)</td>
+          <td>Surveiller le statut officiel githubstatus.com ; vérifier les runs du 19 octobre</td>
+          <td class="priority-medium">Moyen</td>
+        </tr>
+        <tr>
+          <td>Ollama 0.40.10 publié le 23 octobre (changelog non détaillé)</td>
+          <td>Ollama (TRIAL)</td>
+          <td>Vérifier le changelog officiel GitHub avant mise à jour généralisée</td>
+          <td class="priority-low">Faible</td>
+        </tr>
+        <tr>
+          <td>Bun 1.4.4 daté au 22 oct. par une source secondaire unique (non confirmé officiellement)</td>
+          <td>Bun 1.x (TRIAL)</td>
+          <td>Vérifier le changelog officiel avant diffusion ; aucune action si non confirmé</td>
+          <td class="priority-low">Faible</td>
+        </tr>
+        <tr>
+          <td>DuckDB 2.0.0 LTS publiée le 21 octobre (Quack client-serveur, VARIANT, agent mode, triggers)</td>
+          <td>DuckDB (ASSESS)</td>
+          <td>Évaluer un POC et proposer un passage en TRIAL au prochain Tech Talk</td>
+          <td class="priority-low">Faible</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Sources -->
+  <section>
+    <h2>🔗 Sources</h2>
+    <ul class="sources-list">
+      <li><a href="https://en.wikipedia.org/wiki/Ollama" target="_blank">Wikipédia — Ollama (version 0.40.10, 23 octobre 2026)</a></li>
+      <li><a href="https://www.mind-verse.de/ressourcen/news/thema/anthropic-claude" target="_blank">Mind-Verse — Anthropic interdirait les usages abusifs persistants de Claude dès novembre 2026 (source secondaire)</a></li>
+      <li><a href="https://www.developersdigest.tech/blog/langchain-langgraph-whats-new-2026" target="_blank">Developers Digest — LangChain/LangGraph : nouveautés fin 2026 (non officiel)</a></li>
+      <li><a href="https://www.developersdigest.tech/blog/llamaindex-workflows-agents-whats-new-2026" target="_blank">Developers Digest — LlamaIndex : workflows et agents, nouveautés 2026</a></li>
+      <li><a href="https://letsdatascience.com/news/google-deepmind-nears-gemini-4-release-bee31f0a" target="_blank">Let's Data Science — Google DeepMind proche de la sortie de Gemini 4</a></li>
+      <li><a href="https://aiweekly.co/ai-news-today/edition/2026-10-08" target="_blank">AI Weekly — Actualités IA du 8 octobre 2026 (déploiement GPT-6)</a></li>
+      <li><a href="https://kubernetes.io/releases/1.34/" target="_blank">Kubernetes — Page officielle de la release 1.34 (calendrier maintenance/EOL)</a></li>
+      <li><a href="https://endoflife.date/timeline/2026/10/" target="_blank">endoflife.date — Timeline des fins de vie, octobre 2026</a></li>
+      <li><a href="https://scalr.com/learning-center/what-is-opentofu" target="_blank">Scalr — État actuel d'OpenTofu (gouvernance CNCF, version 1.12.2)</a></li>
+      <li><a href="https://www.autobound.ai/companies/docker/news" target="_blank">Autobound — Actualités Docker 2026 (Cloud Sandboxes, 24 septembre)</a></li>
+      <li><a href="https://vulert.com/vuln-db/CVE-2026-53935" target="_blank">Vulert — CVE-2026-53935, faille Cilium CiliumLocalRedirectPolicy (pour mémoire, juillet 2026)</a></li>
+      <li><a href="https://www.python.org/downloads/release/python-3149/" target="_blank">Python.org — Python 3.14.9 (release notes)</a></li>
+      <li><a href="https://discuss.python.org/t/information-for-python-users-regarding-emudhra-emsign-ca-certificate-security-incident/109576" target="_blank">discuss.python.org — Information for Python users regarding eMudhra / emSign CA certificate security incident</a></li>
+      <li><a href="https://www.warp2search.net/story/python-releases-emergency-update-to-block-broken-emudhra-certificate-authority/" target="_blank">Warp2Search — Python Releases Emergency Update to Block Broken eMudhra Certificate Authority</a></li>
+      <li><a href="https://www.thedroptimes.com/node/72829" target="_blank">TheDropTimes — PHP 8.6 RC3 Released as Drupal Compatibility Work Continues</a></li>
+      <li><a href="https://wiki.php.net/todo/php86" target="_blank">PHP Wiki — Planning PHP 8.6 (calendrier RC/GA)</a></li>
+      <li><a href="https://blog.rust-lang.org/releases" target="_blank">Rust Blog — Releases</a></li>
+      <li><a href="https://techbytes.app/posts/java-news-roundup-grails-8-open-liberty-glassfish-infinispan-langchain/" target="_blank">Tech Bytes — Java News Roundup (5 octobre 2026, JDK 28 JEPs)</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Quarkus" target="_blank">Wikipedia — Quarkus (version stable 3.40.1)</a></li>
+      <li><a href="https://devblogs.microsoft.com/typescript/" target="_blank">Microsoft DevBlogs — TypeScript (statut TypeScript 7.0 bêta)</a></li>
+      <li><a href="https://pulsetic.com/status/github/incidents/150178/" target="_blank">Pulsetic — Incident GitHub Status #150178 (19 octobre 2026)</a></li>
+      <li><a href="https://zeli.app/story/50153934" target="_blank">Zeli — GitHub Actions, Pages, and Webhooks Hit by Fresh Outage</a></li>
+      <li><a href="https://pulsetic.com/status/github/incidents/148118/" target="_blank">Pulsetic — Incident GitHub Status #148118 (12 octobre 2026)</a></li>
+      <li><a href="https://endoflife.date/argo-cd" target="_blank">endoflife.date — Argo CD, cycle de releases et patchs</a></li>
+      <li><a href="https://argo-cd.readthedocs.io/en/stable/developer-guide/release-process-and-cadence/" target="_blank">Argo CD — Release Process and Cadence</a></li>
+      <li><a href="https://endoflife.date/grafana" target="_blank">endoflife.date — Grafana, versions supportées et patchs (13.2.4, 13 oct. 2026)</a></li>
+      <li><a href="https://grafana.com/blog/opentelemetry-and-grafana-labs-whats-new-and-whats-next-in-2026" target="_blank">Grafana Labs — OpenTelemetry and Grafana Labs: what's new in 2026</a></li>
+      <li><a href="https://www.autobound.ai/companies/temporal/news" target="_blank">Autobound — Temporal news 2026 (levée de 550M$, série E)</a></li>
+      <li><a href="https://vulners.com/ossf/OSSF:MAL-2026-18309" target="_blank">OSSF — Avis sur le paquet malveillant @s4yhiitestpoc/scan-https-dualuse-e</a></li>
+      <li><a href="https://vulners.com/ossf/OSSF:MAL-2026-18302" target="_blank">OSSF — Avis sur le paquet malveillant @s4yhiitestpoc/r2-control</a></li>
+      <li><a href="https://vulners.com/ossf/OSSF:MAL-2026-18305" target="_blank">OSSF — Avis sur le paquet malveillant @s4yhiitestpoc/r2-https-dualuse</a></li>
+      <li><a href="https://vulners.com/osv_mal/OSV:MAL-2026-18304" target="_blank">OSV — Avis sur le paquet malveillant @s4yhiitestpoc/r2-echo</a></li>
+      <li><a href="https://vulners.com/osv_mal/OSV:MAL-2026-18303" target="_blank">OSV — Avis sur le paquet malveillant @s4yhiitestpoc/r2-dns</a></li>
+      <li><a href="https://vulners.com/ossf/OSSF:MAL-2026-18307" target="_blank">OSSF — Avis sur le paquet malveillant @s4yhiitestpoc/scan-dns-c</a></li>
+      <li><a href="https://vulners.com/ossf/OSSF:MAL-2026-18312" target="_blank">OSSF — Avis sur le paquet malveillant css-flexgap-shim</a></li>
+      <li><a href="https://vulners.com/ossf/OSSF:MAL-2026-18314" target="_blank">OSSF — Avis sur le paquet malveillant css-hnhxwd-polyfill</a></li>
+      <li><a href="https://thehackernews.com/2026/10/tensorlake-npm-package-compromised-to.html" target="_blank">The Hacker News — Le paquet npm Tensorlake compromis pour diffuser le ver Shai-Hulud (pour mémoire, hors fenêtre)</a></li>
+      <li><a href="https://www.csa.gov.sg/alerts-and-advisories/alerts/al-2026-148/" target="_blank">CSA Singapour — Alerte sur les vulnérabilités critiques de Next.js (AL-2026-148, 20 oct.)</a></li>
+      <li><a href="https://www.bleepingcomputer.com/news/security/malicious-pypi-packages-give-hackers-control-of-telegram-bot-servers/" target="_blank">BleepingComputer — Des paquets PyPI malveillants donnent aux attaquants le contrôle de serveurs de bots Telegram (pour mémoire, hors fenêtre)</a></li>
+      <li><a href="https://symfony.com/releases/8.2" target="_blank">Symfony — Page officielle de la release 8.2 (prévue novembre 2026)</a></li>
+      <li><a href="https://daily.dev/posts/a-week-of-symfony-1024-august-10-16-2026-symfony-blog--m8a6zosvk.md" target="_blank">A Week of Symfony #1024 (10-16 août 2026) — dernière édition confirmée</a></li>
+      <li><a href="https://github.com/php/frankenphp/releases" target="_blank">GitHub — Releases php/frankenphp (1.12.7, 1.13.1)</a></li>
+      <li><a href="https://newreleases.io/project/github/php/frankenphp/release/v1.13.1" target="_blank">NewReleases.io — FrankenPHP v1.13.1</a></li>
+      <li><a href="https://laravel-news.com/index.php/pest-v1-0-is-now-released" target="_blank">Laravel News — Pest (historique des releases, à vérifier pour Pest 5)</a></li>
+      <li><a href="https://doctrine-project.org/projects/orm/3.6.html" target="_blank">Doctrine Project — ORM 3.6.x (dernière version stable 3.6.7, mai 2026)</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Bun_(software)" target="_blank">Wikipedia — Bun (software), historique des versions</a></li>
+      <li><a href="https://bun.com/blog/bun-v1.4" target="_blank">Bun.com — Annonce officielle de Bun v1.4</a></li>
+      <li><a href="https://releases.sh/bun/overview" target="_blank">Releases.sh — Suivi des versions Bun</a></li>
+      <li><a href="https://blog.logrocket.com/frontend-wrapped-h1-2026-the-nine-biggest-storylines/" target="_blank">LogRocket — Frontend Wrapped H1 2026</a></li>
+      <li><a href="https://zeli.app/story/50181136" target="_blank">Zeli — DuckDB 2.0.0 LTS "Cinnamon Teal"</a></li>
+      <li><a href="https://duckdb.org/news/?type=release" target="_blank">DuckDB — Page officielle des releases</a></li>
+      <li><a href="https://endoflife.ai/article-duckdb-eol" target="_blank">endoflife.ai — Calendrier de fin de vie DuckDB</a></li>
+      <li><a href="https://www.postgresql.org/about/news/postgresql-19-rc-1-released-3409/" target="_blank">PostgreSQL — Annonce officielle PostgreSQL 19 RC1 (15 octobre)</a></li>
+      <li><a href="https://kafka.apache.org/blog/2026/09/29/apache-kafka-4.2.2-release-announcement/" target="_blank">Apache Kafka — Annonce release 4.2.2</a></li>
+      <li><a href="https://clickhouse.com/blog/202609-newsletter" target="_blank">ClickHouse — Newsletter septembre 2026</a></li>
+      <li><a href="https://www.fivetran.com/press/fivetran-dbt-labs-complete-merger-to-create-the-data-infrastructure-for-trusted-ai-agents" target="_blank">Fivetran — Clôture de la fusion avec dbt Labs</a></li>
+      <li><a href="https://stephanelarue.com/?p=202254" target="_blank">StephaneLarue.com — Livret A : calcul théorique à 2 % pour la révision du 15 octobre 2026 (source secondaire, non officielle)</a></li>
+      <li><a href="https://www.toutsurmesfinances.com/placements/?p=40897" target="_blank">ToutSurMesFinances — Livret A 2026 : taux, plafond, fiscalité</a></li>
+      <li><a href="https://www.banque-france.fr/system/files/2026-01/Communique_de_presse_Livre_%20A%20_LEP-Janvier%202026.pdf" target="_blank">Banque de France — Communiqué de presse Livret A/LEP, janvier 2026 (référence sur le processus de révision)</a></li>
+      <li><a href="https://lcp.fr/actualites/budget-2027-les-deputes-du-rassemblement-national-voteront-contre-la-motion-de-rejet-des" target="_blank">LCP — Budget 2027 : le RN votera contre la motion de rejet des socialistes</a></li>
+      <li><a href="https://lcp.fr/actualites/la-motion-de-rejet-des-socialistes-n-ayant-pas-ete-adoptee-l-examen-du-budget-pour-2027" target="_blank">LCP — La motion de rejet rejetée, l'examen du budget 2027 se poursuit à l'Assemblée</a></li>
+      <li><a href="https://www.moneyvox.fr/actu/110749/budget-lecornu-n-a-donne-aucun-signe-inflexion-pour-les-socialistes-qui-defendront-une-motion-de-rejet" target="_blank">MoneyVox — Budget 2027 : calendrier du vote solennel et risque de 49.3</a></li>
+      <li><a href="https://selectra.info/finance/actualites/marche/dette-fiscale-budget-2027-pea-vente-forcee" target="_blank">Selectra — Budget 2027, saisie fiscale des comptes-titres et du PEA</a></li>
+      <li><a href="https://www.maxcompta.com/blogs/investissement/plf-2027-assurance-vie-pea-transmission" target="_blank">Maxcompta — PLF 2027 : ce qui change pour l'assurance-vie, le PEA et les dons</a></li>
+      <li><a href="https://blog.nalo.fr/plafond-pea/" target="_blank">Nalo — Plafond du PEA 2026</a></li>
+      <li><a href="https://finary.com/fr/blog/epargne/plans/pea/fiscalite-pea" target="_blank">Finary — Fiscalité du PEA</a></li>
+      <li><a href="https://www.pretto.fr/taux-immobilier/historique-taux-immobilier/2026/analyse-taux-immobilier-octobre-2026/" target="_blank">Pretto — Analyse des taux de crédit immobilier, octobre 2026</a></li>
+      <li><a href="https://www.meilleurtaux.com/credit-immobilier/taux-actuels/" target="_blank">Meilleurtaux — Baromètre des taux immobiliers, octobre 2026</a></li>
+      <li><a href="https://www.empruntis.com/financement/taux-immobilier/barometre-national/barometre-national-2026/barometre-national-octobre-2026/" target="_blank">Empruntis — Baromètre national des taux, octobre 2026</a></li>
+      <li><a href="https://www.mysweetimmo.com/taux-immobilier/" target="_blank">MySweetImmo — Taux immobilier</a></li>
+      <li><a href="https://selectra.info/finance/actualites/marche/taux-usure-1er-octobre-pret-immobilier-50-ans" target="_blank">Selectra — Taux d'usure au 1er octobre 2026</a></li>
+      <li><a href="https://www.goodvest.fr/blog/assurance-vie/fiscalite-assurance-vie" target="_blank">Goodvest — Fiscalité de l'assurance-vie</a></li>
+      <li><a href="https://www.abcbourse.com/marches/agenda-des-societes-du-20-octobre-2026_704466" target="_blank">ABC Bourse — Agenda des sociétés et cours CAC 40 du 20 octobre 2026</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  Veille générée automatiquement par Claude Code · Radar Q2 2026 · Prochain review trimestriel : première semaine de décembre 2026
+</footer>
+
+</body>
+</html>
