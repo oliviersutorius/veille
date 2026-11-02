@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veille Technologique — 2 novembre 2026</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #1a1a2e;
+      background: #f5f6fa;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      color: #fff;
+      padding: 2rem 2.5rem;
+    }
+    header h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.3rem; }
+    header .meta { font-size: 0.9rem; color: #a8b2d8; }
+    header .perimeter {
+      display: inline-block;
+      margin-top: 0.8rem;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 20px;
+      padding: 0.25rem 0.8rem;
+      font-size: 0.82rem;
+      color: #c8d3f5;
+    }
+
+    main { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+    /* Alert banner */
+    .alert-banner {
+      background: #fff3cd;
+      border-left: 4px solid #e6a817;
+      border-radius: 6px;
+      padding: 0.8rem 1.2rem;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+    }
+    .alert-banner strong { color: #856404; }
+
+    section {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      padding: 1.5rem 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #16213e;
+      border-bottom: 2px solid #e8eaf0;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.2rem;
+    }
+    h2 .domain-num {
+      display: inline-block;
+      background: #16213e;
+      color: #fff;
+      border-radius: 50%;
+      width: 1.6rem;
+      height: 1.6rem;
+      font-size: 0.78rem;
+      line-height: 1.6rem;
+      text-align: center;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+    }
+    h2 .domain-num.finance { background: #b45309; }
+
+    h3 {
+      font-size: 0.97rem;
+      font-weight: 600;
+      color: #0f3460;
+      margin: 1rem 0 0.3rem;
+    }
+
+    p { margin-bottom: 0.6rem; }
+
+    /* Signal badges */
+    .signal {
+      display: inline-block;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.15rem 0.55rem;
+      margin-left: 0.4rem;
+      vertical-align: middle;
+    }
+    .signal-radar { background: #e8f4fd; color: #0369a1; border: 1px solid #bae6fd; }
+    .signal-alert { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
+    .signal-finance { background: #fef9c3; color: #92400e; border: 1px solid #fde68a; }
+    .signal-finance-alert { background: #ffedd5; color: #9a3412; border: 1px solid #fed7aa; }
+
+    /* Callout boxes */
+    .callout {
+      border-radius: 6px;
+      padding: 0.7rem 1rem;
+      margin: 0.6rem 0;
+      font-size: 0.9rem;
+    }
+    .callout-radar {
+      background: #eff6ff;
+      border-left: 3px solid #3b82f6;
+      color: #1e40af;
+    }
+    .callout-alert {
+      background: #fff1f2;
+      border-left: 3px solid #f43f5e;
+      color: #be123c;
+    }
+    .callout-action {
+      background: #f0fdf4;
+      border-left: 3px solid #22c55e;
+      color: #15803d;
+    }
+    .callout-finance {
+      background: #fffbeb;
+      border-left: 3px solid #d97706;
+      color: #92400e;
+    }
+    .callout-finance-alert {
+      background: #fff7ed;
+      border-left: 3px solid #ea580c;
+      color: #9a3412;
+    }
+
+    /* Summary table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin-top: 0.8rem;
+    }
+    th {
+      background: #16213e;
+      color: #fff;
+      text-align: left;
+      padding: 0.6rem 0.8rem;
+      font-weight: 600;
+    }
+    td { padding: 0.55rem 0.8rem; border-bottom: 1px solid #e8eaf0; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: #f8f9fc; }
+
+    .priority-urgent { color: #dc2626; font-weight: 700; }
+    .priority-medium { color: #d97706; font-weight: 600; }
+    .priority-low { color: #16a34a; }
+
+    /* Sources */
+    .sources-list { list-style: none; padding: 0; }
+    .sources-list li { padding: 0.3rem 0; border-bottom: 1px solid #f0f0f0; }
+    .sources-list li:last-child { border-bottom: none; }
+    .sources-list a { color: #0369a1; text-decoration: none; font-size: 0.88rem; }
+    .sources-list a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      color: #9ca3af;
+      font-size: 0.82rem;
+      padding: 2rem 1.5rem;
+    }
+
+    code {
+      background: #f1f5f9;
+      border-radius: 3px;
+      padding: 0.1rem 0.35rem;
+      font-size: 0.88em;
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      color: #0f3460;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Veille Technologique</h1>
+  <div class="meta">Générée le <strong>2 novembre 2026</strong> · par Claude Code</div>
+  <span class="perimeter">📅 Périmètre : 26 octobre – 2 novembre 2026 (7 jours)</span>
+</header>
+
+<main>
+
+  <!-- Alert banner -->
+  <div class="alert-banner">
+    ⚠️ <strong>Semaine très chargée côté sécurité, avec plusieurs failles touchant directement notre stack ADOPT.</strong> La CISA a confirmé le 26 octobre l'exploitation active en conditions réelles de « PHP2Shell » (CVE-2026-109618/109619, ajoutées à son catalogue KEV) — PHP 8.3+ étant en ADOPT, vérifier que tous les environnements sont bien passés aux versions patchées depuis le 21 octobre (8.5.12/8.4.27/8.3.36/8.2.35), une troisième faille RCE (CVE-2026-115560) restant par ailleurs sans correctif officiel toute la semaine (seule mitigation : désactiver <code>session.upload_progress.enabled</code>). Le 27 octobre, la CISA a ajouté au même catalogue KEV une faille critique du décodeur Brotli (CVE-2026-111497, RCE), qui touche Node.js (TypeScript/React 19 en ADOPT) et Python (ADOPT) via leurs dépendances embarquées. Symfony (ADOPT) a publié le 28 octobre une release de sécurité (7.4.22 notamment) corrigeant 4 CVE (Mime, ExpressionLanguage, HttpFoundation, Yaml), et FrankenPHP (ASSESS) a publié dès le 26 octobre sa version 1.13.4 corrigeant 7 failles dont une de sévérité élevée en mode worker. Côté CI/CD, la campagne « Gheist » continue de voler des secrets via des workflows GitHub Actions malveillants (13 500+ branches, 850+ comptes compromis), et un nouvel incident de disponibilité Actions/Pages/Webhooks a été signalé le 30 octobre. Enfin, Kubernetes 1.34 (ADOPT) a atteint sa fin de vie complète le 27 octobre — à vérifier sur tous les clusters EKS. Côté finance perso : les taux de crédit immobilier ont franchi le seuil des 4 % pour certains profils en novembre, et le budget 2027 reste en pleine tourmente parlementaire (reprise des débats le 27 octobre, résultat du vote non confirmé à la rédaction, PLFSS rejeté le 23 octobre et transmis au Sénat).
+  </div>
+
+  <!-- 1. IA / ML -->
+  <section>
+    <h2><span class="domain-num">1</span> Intelligence Artificielle / ML</h2>
+
+    <h3>Dépôt S-1 d'Anthropic auprès de la SEC le 26 octobre</h3>
+    <p>Anthropic a déposé le 26 octobre 2026 une demande d'introduction en bourse (formulaire S-1) auprès de la SEC pour une cotation de ses actions de classe A. Les chiffres financiers précis (revenus, pertes, valorisation) ne sont pas confirmés par une source primaire — un média italien évoque des « pertes massives » révélées dans le document, à prendre avec prudence. Il s'agit d'un événement corporate sans impact direct sur le radar technique de l'équipe.</p>
+
+    <h3>Semaine calme pour Claude API, LangChain/LangGraph, pgvector, Ollama, DSPy, LlamaIndex, OpenAI Realtime API, MLflow, Instructor et Claude Computer Use</h3>
+    <p>Aucune annonce officielle datée précisément entre le 26 octobre et le 2 novembre n'a été retrouvée pour ces technologies du radar IA. Pour mémoire, hors fenêtre : Claude Haiku 5.5 et une bêta « Claude Security » pour Claude Enterprise (7 et 21 octobre, non confirmées officiellement), Ollama 0.40.10 (23 octobre), LangGraph 1.2.14 (6 octobre). Une piste non confirmée évoque un article Anthropic sur la supériorité des agents IA uniques face aux configurations multi-agents — à vérifier directement sur anthropic.com/news avant toute diffusion, car cela toucherait directement notre usage de LangGraph (ADOPT) si confirmé.</p>
+  </section>
+
+  <!-- 2. Cloud & Infrastructure -->
+  <section>
+    <h2><span class="domain-num">2</span> Cloud &amp; Infrastructure</h2>
+
+    <h3>Fin de vie complète de Kubernetes 1.34 le 27 octobre <span class="signal signal-radar">🔔 Radar</span></h3>
+    <p>Confirmation officielle sur kubernetes.io : Kubernetes 1.34, entré en maintenance le 27 août 2026, a atteint sa fin de vie complète le 27 octobre 2026. Plus aucun correctif de sécurité upstream ne sera backporté sur cette branche à partir de cette date (le support étendu AWS sur EKS pourrait courir plus longtemps selon une source secondaire non vérifiée, jusqu'au 2 décembre).</p>
+    <div class="callout callout-radar">🔔 <strong>Radar :</strong> Kubernetes 1.30+ est en ADOPT. Vérifier qu'aucun cluster EKS de l'équipe ne tourne encore sur la branche 1.34 sans plan de montée de version vers 1.35+.</div>
+
+    <h3>Fin de support de HashiCorp Nomad 1.11 le 31 octobre <span class="signal signal-radar">🔔 Radar</span></h3>
+    <p>La branche Nomad 1.11.x sort du support de base le 31 octobre 2026 selon la table de support HashiCorp (relayée par endoflife.ai). Nomad est en ASSESS sur le radar de l'équipe — si des POC personnels tournent sur cette branche, prévoir une mise à jour vers une version supportée.</p>
+
+    <h3>Incident GitHub Actions / Pages / Webhooks le 30 octobre <span class="signal signal-alert">⚠️ Alerte</span></h3>
+    <p>Voir le détail complet dans la section DevOps &amp; Observabilité ci-dessous : une dégradation a affecté Actions, Pages, Webhooks et la recherche de code le 30 octobre, mitigée le même jour.</p>
+
+    <h3>Dégradation de service Fly.io signalée le 29 octobre (confiance faible)</h3>
+    <p>Un tracker de statut tiers (apistatuscheck.com) signale un incident de dégradation Fly.io daté du 29 octobre 2026, sans détail confirmé sur la portée ni la durée, et sans confirmation sur le statut officiel Fly.io. Fly.io est en ASSESS — impact limité pour l'équipe, à traiter avec prudence.</p>
+
+    <h3>Semaine calme pour Terraform, Docker, AWS (EKS/RDS/S3/SQS), OpenTofu, Crossplane, Cilium, WASM sur edge, Dagger, Ansible et Helm 2</h3>
+    <p>Aucune release, CVE ou annonce datée précisément dans la fenêtre du 26 octobre au 2 novembre pour ces technologies. Les CVE Docker récentes (GhostPat CVE-2026-105445, CVE-2026-92542) et la dernière version connue d'OpenTofu (1.13.2) datent de début-mi octobre, hors fenêtre. Ansible, Helm 2 et AWS What's New n'ont pas pu être vérifiés faute de budget de recherche restant — à confirmer lors d'un prochain cycle.</p>
+  </section>
+
+  <!-- 3. Langages & Runtimes -->
+  <section>
+    <h2><span class="domain-num">3</span> Langages &amp; Runtimes</h2>
+
+    <h3>PHP2Shell : une troisième faille RCE (CVE-2026-115560) reste sans correctif officiel toute la semaine <span class="signal signal-alert">⚠️ Sécurité</span></h3>
+    <p>Après le correctif d'urgence du 21 octobre pour deux failles RCE critiques (« PHP2Shell », voir détail dans la section Sécurité ci-dessous), une troisième faille RCE (CVE-2026-115560) a été révélée le 23 octobre par la PHP Foundation, non couverte par ce correctif. Aucun patch officiel n'existait durant toute la semaine du 26 octobre au 2 novembre ; la seule mitigation documentée reste de désactiver <code>session.upload_progress.enabled</code>. La PHP Foundation évoque un correctif avec « la prochaine version régulière de PHP », probablement après notre fenêtre de veille.</p>
+    <div class="callout callout-alert">⚠️ <strong>Action :</strong> PHP 8.3+ est en ADOPT. Vérifier que la mitigation (<code>session.upload_progress.enabled=0</code>) est bien appliquée sur tous les environnements de production tant que le correctif de CVE-2026-115560 n'est pas sorti.</div>
+
+    <h3>Semaine calme pour Symfony (langage), TypeScript, Go, Python, React 19, Rust, Gleam, Effect-TS et l'écosystème Java (JDK, Spring Boot, Quarkus, GraalVM, Maven/Gradle)</h3>
+    <p>Aucune actualité datée précisément dans la fenêtre n'a été confirmée pour ces technologies (voir la section Frameworks &amp; Architecture pour l'actualité Symfony/FrankenPHP/Doctrine/Pest). Une source secondaire datée du 26 octobre situe React à la version 19.3.1 (sortie le 14 octobre, hors fenêtre), sans nouvelle sortie confirmée cette semaine. L'écosystème Java (Spring Boot, Quarkus, GraalVM, Gradle) n'a pas pu être vérifié faute de budget de recherche restant — à traiter au prochain cycle.</p>
+  </section>
+
+  <!-- 4. DevOps & Observabilité -->
+  <section>
+    <h2><span class="domain-num">4</span> DevOps &amp; Observabilité</h2>
+
+    <h3>Nouvel incident GitHub Actions / Pages / Webhooks le 30 octobre <span class="signal signal-alert">⚠️ À surveiller</span></h3>
+    <p>Selon des trackers de statut tiers (githubstatus.com n'étant pas accessible depuis l'environnement de recherche), GitHub a signalé le 30 octobre une dégradation affectant simultanément Actions, Pages, la livraison des Webhooks et la recherche de code, avec mitigation annoncée le même jour en fin d'après-midi (heure US Est). Aucun post-mortem détaillé n'a pu être retrouvé.</p>
+    <div class="callout callout-alert">⚠️ <strong>Vérification :</strong> GitHub Actions est notre CI/CD principal (ADOPT). Vérifier si des runs du 30 octobre ont semblé bloqués ou avec logs/webhooks retardés.</div>
+
+    <h3>Avis de sécurité Jenkins — 15 vulnérabilités corrigées le 28 octobre <span class="signal signal-alert">⚠️ Sécurité</span></h3>
+    <p>Jenkins a publié un avis de sécurité le 28 octobre corrigeant 15 vulnérabilités (majoritairement classées High selon une source secondaire), livrées dans Jenkins 2.588 et LTS 2.580.2. Parmi les failles les plus sensibles : une désérialisation XStream, une exécution de code sur le contrôleur via le droit Agent/Configure, et une race condition dans l'assistant de configuration initiale pouvant permettre à un attaquant non authentifié de créer un compte administrateur. Les numéros CVE exacts et la sévérité précise restent à confirmer sur jenkins.io/security/advisories.</p>
+    <div class="callout callout-alert">⚠️ <strong>Action :</strong> Jenkins est en HOLD sur notre radar (les projets existants peuvent rester dessus). Si des instances Jenkins tournent encore en interne sur des projets legacy, appliquer ce correctif en urgence.</div>
+
+    <h3>Semaine calme pour OpenTelemetry, Grafana/Prometheus, ArgoCD, SOPS/age, Renovate, Temporal.io, Grafana Loki, Buildkite, Dagger, Earthly, VictoriaMetrics, Beyla et Ansible Tower/Nagios</h3>
+    <p>Aucune release ou annonce datée précisément dans la fenêtre du 26 octobre au 2 novembre pour ces outils de notre radar DevOps/Observabilité.</p>
+  </section>
+
+  <!-- 5. Sécurité -->
+  <section>
+    <h2><span class="domain-num">5</span> Sécurité</h2>
+
+    <h3>PHP2Shell confirmé en exploitation active — ajouté au catalogue CISA KEV le 26 octobre <span class="signal signal-alert">⚠️ Urgent</span></h3>
+    <p>La CISA a ajouté le 26 octobre les deux failles RCE non authentifiées « PHP2Shell » (CVE-2026-109618 et CVE-2026-109619, CVSS 4.0 : 9.2, patchées le 21 octobre dans PHP 8.5.12/8.4.27/8.3.36/8.2.35) à son catalogue Known Exploited Vulnerabilities, confirmant une exploitation active, avec une échéance de correction fixée au 29 octobre pour les agences fédérales américaines. Toute installation PHP servant des requêtes web est concernée (PHP-FPM, Apache mod_php, php-cgi, FrankenPHP, LiteSpeed). Une source secondaire (Delft TU Threat Intelligence Lab) évoque plus de 50 000 requêtes d'exploitation depuis 600+ IP — non confirmé par une source primaire.</p>
+    <div class="callout callout-alert">⚠️ <strong>Action :</strong> PHP 8.3+/Symfony 7.x sont en ADOPT. Vérifier en urgence que toutes les installations PHP du parc (y compris FrankenPHP, ASSESS) sont bien passées aux versions patchées du 21 octobre.</div>
+
+    <h3>Faille critique Google Brotli (CVE-2026-111497) ajoutée au CISA KEV le 27 octobre — impact Node.js/Python <span class="signal signal-alert">⚠️ Urgent</span></h3>
+    <p>La CISA a ajouté le 27 octobre une faille critique d'écriture hors limites dans le décodeur Brotli de Google (versions 1.0.3 à 1.2.0, CVE-2026-111497), avec échéance de correction au 10 novembre pour les agences fédérales. Cette faille touche de nombreux écosystèmes embarquant Brotli : Node.js (surnommée « node2shell »), .NET, et les paquets Python <code>brotli</code>/<code>brotlicffi</code>. Versions corrigées : 1.0.10, 1.1.1, 1.2.1.</p>
+    <div class="callout callout-alert">⚠️ <strong>Action :</strong> TypeScript/React 19 (Node.js) et Python 3.12+ sont en ADOPT. Vérifier l'exposition à cette faille dans les dépendances transitives embarquant Brotli.</div>
+
+    <h3>Campagne « Gheist » — vol de secrets via des workflows GitHub Actions malveillants <span class="signal signal-alert">⚠️ Alerte</span></h3>
+    <p>La campagne « Gheist », active depuis le 15 septembre et toujours en cours fin octobre (couverture datée des 28-29 octobre), utilise des tokens GitHub volés pour créer des branches (préfixe <code>ci-sync-</code>) exécutant un workflow malveillant qui imprime les secrets du dépôt dans les logs Actions avant exfiltration. Plus de 13 500 branches malveillantes et 850+ comptes compromis ont été recensés par Wiz, qui distingue cette campagne de la précédente GhostAction.</p>
+    <div class="callout callout-alert">⚠️ <strong>Action :</strong> GitHub Actions est notre CI/CD principal (ADOPT). Vérifier l'absence de branches suspectes type <code>ci-sync-*</code>, effectuer une rotation des secrets CI/CD et restreindre les permissions de token.</div>
+
+    <h3>Kubernetes 1.34 — fin de vie le 27 octobre, Symfony et FrankenPHP patchés <span class="signal signal-radar">🔔 Radar</span></h3>
+    <p>Voir le détail complet dans les sections Cloud &amp; Infrastructure et Frameworks &amp; Architecture ci-dessus/ci-dessous : fin de vie de Kubernetes 1.34 (ADOPT) le 27 octobre, et releases de sécurité Symfony (28 octobre, 4 CVE) et FrankenPHP (26 octobre, 7 vulnérabilités dont une de sévérité élevée).</p>
+
+    <h3>Semaine calme pour Trivy, Vault, Dependabot/Renovate, OWASP ZAP, SBOM/CycloneDX, Semgrep, Falco, Sigstore/Cosign, Tetragon, OpenFGA et SLSA</h3>
+    <p>Aucune release, CVE ou avis daté précisément dans la fenêtre pour ces outils de notre radar Sécurité. Côté npm/PyPI, aucune nouvelle compromission de paquet clairement datée dans la fenêtre n'a été confirmée (dernière campagne documentée avant la fenêtre : paquet npm <code>tensorlake</code>, 8 octobre).</p>
+  </section>
+
+  <!-- 6. Frameworks & Architecture -->
+  <section>
+    <h2><span class="domain-num">6</span> Frameworks &amp; Architecture</h2>
+
+    <h3>Symfony — release de sécurité le 28 octobre (4 CVE corrigées) <span class="signal signal-alert">⚠️ Sécurité</span></h3>
+    <p>Symfony a publié le 28 octobre les versions 5.4.55, 6.4.49, 7.4.22 et 8.1.10 corrigeant 4 CVE : CVE-2026-45070 (Mime — rejet des noms de paramètres contenant des caractères non-token), CVE-2026-109449 (ExpressionLanguage — limitation du niveau d'imbrication des expressions parsées, risque de crash), CVE-2026-108082 (HttpFoundation — correction d'une ambiguïté de parsing causant du backtracking dans <code>HeaderUtils::split()</code>), et CVE-2026-109413 (Yaml — limitation de la profondeur de récursion du lexer inline, risque de crash). Source primaire : GitHub Releases officiel de symfony/symfony.</p>
+    <div class="callout callout-alert">⚠️ <strong>Action :</strong> Symfony 7.x est en ADOPT. Mise à jour de patch (7.4.22) recommandée sans délai sur tous les projets en production.</div>
+
+    <h3>FrankenPHP 1.13.4 — release de sécurité le 26 octobre (7 vulnérabilités) <span class="signal signal-alert">⚠️ Sécurité</span></h3>
+    <p>FrankenPHP a publié le 26 octobre sa version 1.13.4 corrigeant 7 vulnérabilités, dont une de sévérité élevée en mode worker (un client peut faire crasher tout le processus avec une seule requête, GHSA-5f4m-ff4w-g458, limitée aux versions 1.13.2/1.13.3), un use-after-free sur <code>putenv()</code>, une fuite de variables d'environnement entre requêtes en mode worker, et le correctif de la faille Brotli (CVE-2026-111497, voir section Sécurité). Go a été mis à jour vers 1.27.3.</p>
+    <div class="callout callout-alert">⚠️ <strong>Action :</strong> FrankenPHP est en ASSESS. Mise à jour fortement recommandée pour les équipes expérimentant déjà le mode worker.</div>
+
+    <h3>Pest PHP v5.3.4 et v5.3.5 — correctif PHPUnit et TIA <span class="signal signal-radar">🔔 Radar</span></h3>
+    <p>Pest PHP a publié le 27 octobre la v5.3.4, qui embarque une montée de version de PHPUnit vers 13.4.5 corrigeant GHSA-9vw2-f4vp-x7gf (CVE-2026-119193, exécution de code via répertoire temporaire partagé dans la gestion de couverture PHPT). La v5.3.5 du 1er novembre apporte des correctifs sur le Test Impact Analysis (gestion du commit de baseline).</p>
+    <div class="callout callout-radar">🔔 <strong>Radar :</strong> Pest PHP est en TRIAL. Mise à jour recommandée pour les suites de tests partagées en CI multi-utilisateurs (correctif PHPUnit).</div>
+
+    <h3>Doctrine ORM 3.7.6 — maintenance le 30 octobre</h3>
+    <p>Correctifs de bugs sans faille de sécurité identifiée : respect du « identifier folding » configuré, correction du <code>CursorPaginator</code> et du comptage <code>Paginator</code>, héritage des index non nommés depuis les mapped superclasses. Doctrine ORM 3 est en ADOPT — mise à jour de maintenance standard, aucune action urgente.</p>
+
+    <h3>Écart de versioning à signaler pour le prochain review de radar <span class="signal signal-radar">🔔 Radar</span></h3>
+    <p>Le radar référence actuellement « Pest PHP 3 » et « API Platform 3.x », mais les dépôts officiels montrent Pest PHP en v5.3.x (releases jusqu'au 1er novembre) et API Platform avec des branches stables 4.4.6 et 5.0.5 (dernière release le 23 octobre, juste hors fenêtre). Un écart important semble exister entre la version suivie sur le radar et la version réellement disponible.</p>
+    <div class="callout callout-radar">🔔 <strong>Radar :</strong> à vérifier et mettre à jour lors de la prochaine revue trimestrielle (<code>04-tech-radar.md</code> et les fiches <code>fiches/pest-php-3.md</code> / <code>fiches/api-platform-3.md</code> le cas échéant).</div>
+
+    <h3>Tendances architecture (microservices, event-driven, DDD) — non vérifiable cette semaine</h3>
+    <p>Les sources habituelles (Martin Fowler, InfoQ, Netflix/Uber Engineering) n'ont pas pu être consultées cette semaine (accès réseau restreint depuis l'environnement de recherche). À couvrir au prochain cycle.</p>
+  </section>
+
+  <!-- 7. Frontend & Expérience Dev -->
+  <section>
+    <h2><span class="domain-num">7</span> Frontend &amp; Expérience Dev</h2>
+
+    <h3>Next.js — préavis de release de sécurité pour le 3 novembre (7 vulnérabilités medium) <span class="signal signal-alert">⚠️ À surveiller</span></h3>
+    <p>Vercel a publié le 27 octobre un préavis annonçant une release de sécurité Next.js programmée pour le 3 novembre 2026, corrigeant 7 vulnérabilités classées « medium », dans le cadre du « Next.js Security Release Program » mensuel. Les CVE détaillées seront publiées avec la release — à vérifier dès le 3 novembre.</p>
+    <div class="callout callout-alert">⚠️ <strong>À surveiller :</strong> React 19 est en ADOPT ; si l'équipe utilise Next.js, planifier la mise à jour dès la publication des correctifs.</div>
+
+    <h3>Incident de service npm signalé le 26 octobre (non confirmé)</h3>
+    <p>Des sources secondaires contradictoires évoquent un problème de consultation de paquets/authentification npm le 26 octobre, déclaré résolu le même jour, ainsi qu'une faille d'autorisation ayant potentiellement exposé des noms de paquets privés entre le 21 et le 29 octobre (GitHub Blog). Aucune confirmation croisée sur le statut officiel npm — à traiter avec prudence.</p>
+
+    <h3>Semaine calme pour React 19, TypeScript, Bun 1.x, Astro 4, Hono, Effect-TS, Vite et les design systems</h3>
+    <p>Aucune release ni actualité datée précisément dans la fenêtre du 26 octobre au 2 novembre pour ces technologies de notre radar Frontend.</p>
+  </section>
+
+  <!-- 8. Data & Streaming -->
+  <section>
+    <h2><span class="domain-num">8</span> Data &amp; Streaming</h2>
+
+    <h3>PostgreSQL 19 : la GA repoussée au 19 novembre <span class="signal signal-radar">🔔 Radar</span></h3>
+    <p>La GA de PostgreSQL 19, initialement visée au 29 octobre, a été repoussée au 19 novembre 2026 (RC2 prévu le 12 novembre), décision prise le 10 octobre mais largement commentée le 30 octobre. Plusieurs médias (Phoronix, Neon, Snowflake Engineering) attribuent une partie du retard à un afflux de relectures de code assistées par IA ayant détecté plus de bugs que l'équipe humaine ne pouvait trier — attribution non confirmée officiellement.</p>
+    <div class="callout callout-radar">🔔 <strong>Radar :</strong> PostgreSQL 16+ reste en ADOPT, pas d'impact sur l'anneau. À mentionner au prochain Tech Talk pour planifier l'upgrade en conséquence.</div>
+
+    <h3>mongosh 2.14.0 — correctif de sécurité le 26 octobre</h3>
+    <p>MongoDB a publié mongosh 2.14.0 le 26 octobre, un correctif de sécurité adoptant Node.js 24.14.1 et mettant à jour plusieurs dépendances. MongoDB est en HOLD sur notre radar (pour les données relationnelles) ; ce correctif concerne l'outil client, impact limité.</p>
+
+    <h3>dbt Labs — événement « Fusion engine » les 28-29 octobre (contenu non confirmé)</h3>
+    <p>dbt Labs a organisé un événement virtuel consacré au moteur Fusion (réécrit en Rust) les 28-29 octobre. Le contenu précis (annonces produit, roadmap) n'a pas pu être confirmé — à vérifier sur getdbt.com.</p>
+
+    <h3>Semaine calme pour Redis, Kafka, ClickHouse, Apache Iceberg, Redpanda, RisingWave, DuckDB et Hadoop/HDFS</h3>
+    <p>Aucun fait daté précisément dans la fenêtre pour ces technologies. Dernières releases connues hors fenêtre : ClickHouse 26.10.2.103 (24 octobre), DuckDB 2.0.0 LTS (21 octobre), Kafka 4.2.2 (29 septembre).</p>
+  </section>
+
+  <!-- 9. Finance Personnelle & Investissement -->
+  <section>
+    <h2><span class="domain-num finance">9</span> Finance Personnelle &amp; Investissement <span style="font-size:0.75rem; font-weight:400; color:#9a6b1f;">(informationnel, hors radar tech)</span></h2>
+
+    <h3>Crédit immobilier : le seuil des 4 % franchi pour certains profils en novembre <span class="signal signal-finance">💰 Info finance</span></h3>
+    <p>Les baromètres Pretto de novembre indiquent des taux moyens hors assurance de 3,56 % (15 ans), 3,76 % (20 ans) et 3,85 % (25 ans), en hausse de 0,06 à 0,11 point par rapport à octobre. Pour les emprunteurs à revenus inférieurs à 40 000 € nets/an, le taux moyen atteint désormais 4,07 % sur 25 ans. Pour un prêt de 250 000 € sur 20 ans, cela représente environ +13 €/mois et +3 115 € d'intérêts sur la durée du prêt.</p>
+
+    <h3>Budget 2027 : reprise des débats le 27 octobre, résultat du vote non confirmé <span class="signal signal-finance-alert">⚠️ Alerte finance</span></h3>
+    <p>Après le rejet en commission des finances de la partie recettes du PLF 2027 le 9 octobre, les débats en hémicycle ont repris le 27 octobre. L'issue du vote sur cette partie n'a pas pu être confirmée au moment de la rédaction — à vérifier en priorité. Pour mémoire (juste avant la fenêtre), le PLFSS 2027 a été rejeté par l'Assemblée nationale le 23 octobre (115 voix contre sur sa partie recettes), entraînant le rejet du texte entier, désormais transmis au Sénat pour examen à partir du 9 novembre. L'article 7 du PLFSS, qui visait à intégrer l'épargne salariale dans le calcul de la RGDU au 1er janvier 2027, reste suspendu au sort du texte.</p>
+    <div class="callout callout-finance-alert">⚠️ À suivre dès le prochain cycle : résultat du vote PLF 2027 (recettes) et transmission du PLFSS au Sénat le 9 novembre.</div>
+
+    <h3>Livret A, PEA et assurance-vie : pas de changement cette semaine <span class="signal signal-finance">💰 Info finance</span></h3>
+    <p>Le taux du Livret A reste à 1,70 % (LEP à 2,50 %), fixé par arrêté du 28 juillet 2026 et valable jusqu'au 31 janvier 2027 ; aucun communiqué officiel de la Banque de France ne confirme de révision exceptionnelle au 1er novembre. Le plafond du PEA reste inchangé (150 000 € / 225 000 € avec PEA-PME) ; la clause du PLF 2027 étendant les procédures de saisie fiscale aux comptes-titres et PEA en cas de dette fiscale reste en débat, non votée à ce stade. Rien de nouveau côté fiscalité de l'assurance-vie cette semaine.</p>
+
+    <h3>À surveiller la semaine prochaine</h3>
+    <p>Résultat effectif du vote sur la partie recettes du PLF 2027, transmission et débats du PLFSS au Sénat à partir du 9 novembre, sort de la clause de saisie fiscale des titres (PEA/CTO), et évolution des baromètres de crédit immobilier.</p>
+  </section>
+
+  <!-- Tableau récapitulatif -->
+  <section>
+    <h2>📊 Récapitulatif — Signaux Radar (domaines 1-8)</h2>
+    <p style="font-size:0.88rem; color:#6b7280; margin-bottom:0.8rem;">Signaux à discuter lors du prochain Tech Talk ou Brown Bag.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Signal</th>
+          <th>Technologie</th>
+          <th>Mouvement potentiel</th>
+          <th>Priorité</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>PHP2Shell confirmé en exploitation active, ajouté au CISA KEV le 26 oct. (CVE-2026-109618/109619)</td>
+          <td>PHP 8.3+ / Symfony 7.x (ADOPT)</td>
+          <td>Vérifier en urgence que toutes les installations PHP sont passées aux versions patchées du 21 oct.</td>
+          <td class="priority-urgent">⚠️ Urgent</td>
+        </tr>
+        <tr>
+          <td>Faille critique Brotli (CVE-2026-111497) ajoutée au CISA KEV le 27 oct. — impact Node.js/Python</td>
+          <td>TypeScript/React 19 (Node.js), Python 3.12+ (ADOPT)</td>
+          <td>Vérifier l'exposition dans les dépendances transitives embarquant Brotli, patcher avant le 10 nov.</td>
+          <td class="priority-urgent">⚠️ Urgent</td>
+        </tr>
+        <tr>
+          <td>Symfony — release de sécurité le 28 oct. corrigeant 4 CVE (Mime, ExpressionLanguage, HttpFoundation, Yaml)</td>
+          <td>Symfony 7.x (ADOPT)</td>
+          <td>Mettre à jour vers 7.4.22 sans délai sur tous les projets en production</td>
+          <td class="priority-urgent">⚠️ Urgent</td>
+        </tr>
+        <tr>
+          <td>Campagne « Gheist » — vol de secrets via workflows GitHub Actions malveillants (13 500+ branches)</td>
+          <td>GitHub Actions (ADOPT)</td>
+          <td>Vérifier l'absence de branches <code>ci-sync-*</code>, rotation des secrets CI/CD</td>
+          <td class="priority-urgent">⚠️ Urgent</td>
+        </tr>
+        <tr>
+          <td>Fin de vie complète de Kubernetes 1.34 le 27 octobre</td>
+          <td>Kubernetes 1.30+ (ADOPT)</td>
+          <td>Vérifier que tous les clusters EKS sont sur une branche supportée (1.35+)</td>
+          <td class="priority-urgent">⚠️ Urgent</td>
+        </tr>
+        <tr>
+          <td>FrankenPHP 1.13.4 — release de sécurité le 26 oct. (7 vulnérabilités dont une sévérité élevée en mode worker)</td>
+          <td>FrankenPHP (ASSESS)</td>
+          <td>Mettre à jour les instances en mode worker</td>
+          <td class="priority-medium">Moyen</td>
+        </tr>
+        <tr>
+          <td>Avis de sécurité Jenkins le 28 oct. (15 vulnérabilités, Jenkins 2.588/LTS 2.580.2)</td>
+          <td>Jenkins (HOLD)</td>
+          <td>Patcher les instances encore en production sur projets legacy</td>
+          <td class="priority-medium">Moyen</td>
+        </tr>
+        <tr>
+          <td>Préavis de release de sécurité Next.js pour le 3 nov. (7 vulnérabilités medium)</td>
+          <td>Écosystème React 19 (ADOPT)</td>
+          <td>Planifier la mise à jour dès publication des CVE le 3 novembre</td>
+          <td class="priority-medium">Moyen</td>
+        </tr>
+        <tr>
+          <td>Nouvel incident GitHub Actions/Pages/Webhooks le 30 oct.</td>
+          <td>GitHub Actions (ADOPT)</td>
+          <td>Vérifier si des runs du 30 oct. ont été impactés</td>
+          <td class="priority-medium">Moyen</td>
+        </tr>
+        <tr>
+          <td>Pest PHP v5.3.4 — correctif PHPUnit (CVE-2026-119193) ; écart de version avec le libellé radar (« Pest PHP 3 » vs v5.3.x)</td>
+          <td>Pest PHP (TRIAL)</td>
+          <td>Mettre à jour les suites de tests CI ; corriger le libellé au prochain review de radar</td>
+          <td class="priority-low">Faible</td>
+        </tr>
+        <tr>
+          <td>API Platform en v4.4.6/v5.0.5 — écart avec le libellé radar (« API Platform 3.x »)</td>
+          <td>API Platform (TRIAL)</td>
+          <td>Vérifier et corriger le libellé au prochain review de radar</td>
+          <td class="priority-low">Faible</td>
+        </tr>
+        <tr>
+          <td>PostgreSQL 19 : GA repoussée du 29 oct. au 19 novembre</td>
+          <td>PostgreSQL 16+ (ADOPT)</td>
+          <td>Aucune action immédiate, informer l'équipe au prochain Tech Talk</td>
+          <td class="priority-low">Faible</td>
+        </tr>
+        <tr>
+          <td>Fin de support de HashiCorp Nomad 1.11 le 31 octobre</td>
+          <td>Nomad (ASSESS)</td>
+          <td>Mettre à jour les POC personnels tournant sur cette branche</td>
+          <td class="priority-low">Faible</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Sources -->
+  <section>
+    <h2>🔗 Sources</h2>
+    <ul class="sources-list">
+      <li><a href="https://dealroom.co/news/165999" target="_blank">Dealroom — Dépôt S-1 d'Anthropic auprès de la SEC (26 octobre 2026)</a></li>
+      <li><a href="https://lavocedinewyork.com/news/economia/2026/10/26/anthropic-deposita-domanda-di-quotazione-a-wall-street-e-svela-le-maxi-perdite/" target="_blank">La Voce di New York — Anthropic dépose sa demande de cotation à Wall Street</a></li>
+      <li><a href="https://www.siliconreport.com/ai/archive/2026-10" target="_blank">SiliconReport — Archive actualités IA, octobre 2026 (piste non confirmée)</a></li>
+      <li><a href="https://www.orcarouter.ai/blog/claude-news-what-anthropic-shipped-in-october-2026" target="_blank">OrcaRouter — Ce qu'Anthropic a livré en octobre 2026</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Ollama" target="_blank">Wikipédia — Ollama (version 0.40.10, 23 octobre 2026)</a></li>
+      <li><a href="https://kubernetes.io/releases/1.34/" target="_blank">Kubernetes — Page officielle de la release 1.34 (calendrier maintenance/EOL)</a></li>
+      <li><a href="https://endoflife.ai/article-hashicorp-consul-nomad-eol" target="_blank">endoflife.ai — Fin de support HashiCorp Consul/Nomad</a></li>
+      <li><a href="https://developer.hashicorp.com/nomad/docs/release-notes" target="_blank">HashiCorp — Notes de version Nomad</a></li>
+      <li><a href="https://www.technobezz.com/news/github-service-incident-2bba2fee" target="_blank">Technobezz — Incident GitHub Actions/Pages/Webhooks (30 octobre 2026)</a></li>
+      <li><a href="https://pulsetic.com/status/github/incidents/152690/" target="_blank">Pulsetic — Incident GitHub Status #152690 (30 octobre 2026)</a></li>
+      <li><a href="https://apistatuscheck.com/blog/flyio-outage-2026-10-29" target="_blank">APIStatusCheck — Incident Fly.io du 29 octobre 2026</a></li>
+      <li><a href="https://thehackernews.com/2026/10/cisa-confirms-active-exploitation-of.html" target="_blank">The Hacker News — La CISA confirme l'exploitation active de PHP2Shell</a></li>
+      <li><a href="https://www.theregister.com/a/5305681" target="_blank">The Register — PHP2Shell ajouté au catalogue CISA KEV</a></li>
+      <li><a href="https://compliancehub.wiki/php2shell-hits-cisa-kev-patch-deadlines-evidence-auditors-ask/" target="_blank">ComplianceHub — PHP2Shell : échéances de correctif CISA KEV</a></li>
+      <li><a href="https://stackharbor.com/en/blog/php2shell-cve-2026-109618-109619-what-we-know/" target="_blank">StackHarbor — PHP2Shell CVE-2026-109618/109619 : ce que l'on sait</a></li>
+      <li><a href="https://www.secureworld.io/industry-news/php2shell-not-over-new-rce-flaw" target="_blank">SecureWorld — PHP2Shell n'est pas terminé : nouvelle faille RCE (CVE-2026-115560)</a></li>
+      <li><a href="https://bleepingcomputer.com/news/security/php-shares-mitigation-for-new-and-unpatched-rce-vulnerability" target="_blank">BleepingComputer — PHP partage une mitigation pour une nouvelle faille RCE non corrigée</a></li>
+      <li><a href="https://github.com/php/frankenphp/releases/tag/v1.13.2" target="_blank">GitHub — FrankenPHP v1.13.2 (21 octobre 2026)</a></li>
+      <li><a href="https://github.com/php/frankenphp/releases/tag/v1.13.4" target="_blank">GitHub — FrankenPHP v1.13.4, release de sécurité (26 octobre 2026)</a></li>
+      <li><a href="https://cyber.gc.ca/en/alerts-advisories/al26-027-critical-vulnerability-impacting-google-brotli-cve-2026-111497" target="_blank">Centre canadien pour la cybersécurité — Faille critique Google Brotli (CVE-2026-111497)</a></li>
+      <li><a href="https://www.bleepingcomputer.com/news/security/cisa-warns-of-hackers-now-exploiting-critical-node2shell-flaw/amp/" target="_blank">BleepingComputer — La CISA alerte sur l'exploitation de la faille critique « node2shell »</a></li>
+      <li><a href="https://fieldeffect.com/blog/brotli-vulnerability-affects-multiple-software-ecosystems" target="_blank">Field Effect — La faille Brotli affecte plusieurs écosystèmes logiciels</a></li>
+      <li><a href="https://thehackernews.com/2026/10/gheist-uses-stolen-github-tokens-to.html" target="_blank">The Hacker News — La campagne Gheist utilise des tokens GitHub volés</a></li>
+      <li><a href="https://www.csoonline.com/article/4241625/gheist-turns-github-actions-into-a-secret-extraction-service.html" target="_blank">CSO Online — Gheist transforme GitHub Actions en service d'extraction de secrets</a></li>
+      <li><a href="https://darkreading.com/cyberattacks-data-breaches/gheist-stolen-github-tokens-cloud-secrets" target="_blank">Dark Reading — Gheist : tokens GitHub volés, secrets cloud exposés</a></li>
+      <li><a href="https://labs.cloudsecurityalliance.org/wp-content/uploads/2026/10/CSA_research_note_gheist_github_token_actions_secret_theft_20261029-csa-styled.pdf" target="_blank">Cloud Security Alliance — Note de recherche sur la campagne Gheist (29 octobre 2026)</a></li>
+      <li><a href="https://nca.gov.sa/en/cert/8100/" target="_blank">Autorité nationale de cybersécurité saoudienne (NCA) — Avis de sécurité Jenkins (28 octobre 2026)</a></li>
+      <li><a href="https://securityonline.info/jenkins-vulnerabilities-october-2026/" target="_blank">SecurityOnline — Vulnérabilités Jenkins, octobre 2026</a></li>
+      <li><a href="https://github.com/symfony/symfony/releases/tag/v8.1.10" target="_blank">GitHub — Symfony v8.1.10, release de sécurité (28 octobre 2026)</a></li>
+      <li><a href="https://github.com/doctrine/orm/releases/tag/3.7.6" target="_blank">GitHub — Doctrine ORM 3.7.6 (30 octobre 2026)</a></li>
+      <li><a href="https://github.com/pestphp/pest/releases/tag/v5.3.4" target="_blank">GitHub — Pest PHP v5.3.4 (27 octobre 2026)</a></li>
+      <li><a href="https://github.com/pestphp/pest/releases/tag/v5.3.5" target="_blank">GitHub — Pest PHP v5.3.5 (1er novembre 2026)</a></li>
+      <li><a href="https://github.com/api-platform/core/releases" target="_blank">GitHub — API Platform, releases (dernière : 23 octobre 2026)</a></li>
+      <li><a href="https://symfony.com/releases/8.2" target="_blank">Symfony — Page officielle de la release 8.2 (prévue novembre 2026)</a></li>
+      <li><a href="https://nextjs.org/blog/upcoming-nextjs-security-release-november-2026" target="_blank">Next.js (Vercel) — Préavis de release de sécurité, novembre 2026</a></li>
+      <li><a href="https://www.technobezz.com/news/npm-service-incident-2eb85c79" target="_blank">Technobezz — Incident de service npm (26 octobre 2026)</a></li>
+      <li><a href="https://github.blog/security/supply-chain-security/githubs-commitment-to-npm-ecosystem-security/" target="_blank">GitHub Blog — Engagement de GitHub sur la sécurité de l'écosystème npm</a></li>
+      <li><a href="https://www.phoronix.com/news/PostgreSQL-19-Late" target="_blank">Phoronix — PostgreSQL 19 en retard, GA repoussée au 19 novembre</a></li>
+      <li><a href="https://neon.com/blog/postgres-19-is-late-and-its-ais-fault" target="_blank">Neon — PostgreSQL 19 est en retard, et c'est (en partie) la faute de l'IA</a></li>
+      <li><a href="https://www.snowflake.com/en/blog/engineering/postgresql-19-release-delay-feature-reverts/" target="_blank">Snowflake Engineering — Retard de PostgreSQL 19 et retraits de fonctionnalités</a></li>
+      <li><a href="https://www.postgresql.org/about/news/postgresql-19-rc-1-released-3409/" target="_blank">PostgreSQL — Annonce officielle PostgreSQL 19 RC1</a></li>
+      <li><a href="https://www.mongodb.com/docs/mongodb-shell/changelog.md" target="_blank">MongoDB — Changelog mongosh (version 2.14.0, 26 octobre 2026)</a></li>
+      <li><a href="https://dev.classmethod.jp/en/articles/dbt-world-tour-tokyo-2026-opening-keynote-level-up/" target="_blank">Classmethod — dbt World Tour Tokyo 2026, keynote d'ouverture</a></li>
+      <li><a href="https://www.pretto.fr/taux-immobilier/historique-taux-immobilier/2026/analyse-taux-immobilier-novembre-2026/" target="_blank">Pretto — Analyse des taux de crédit immobilier, novembre 2026</a></li>
+      <li><a href="https://www.moneyvox.fr/credit/actualites/111043/credit-immobilier-voici-les-nouveaux-taux-sur-15-20-et-25-ans-en-novembre-2026" target="_blank">MoneyVox — Crédit immobilier : nouveaux taux sur 15, 20 et 25 ans en novembre 2026</a></li>
+      <li><a href="https://www.mysweetimmo.com/2026/10/29/credit-immobilier-les-taux-remontent-les-4-deja-depasses-pour-certains-menages/" target="_blank">MySweetImmo — Crédit immobilier : les taux remontent, les 4 % déjà dépassés pour certains ménages</a></li>
+      <li><a href="https://lcp.fr/actualites/budget-de-la-secu-l-assemblee-nationale-rejette-la-partie-recettes-l-ensemble-du-texte" target="_blank">LCP — Budget de la Sécu : l'Assemblée nationale rejette la partie recettes du PLFSS</a></li>
+      <li><a href="https://www.legisocial.fr/actualites-sociales/8204-plfss-2027-rejet-assemblee-nationale.html" target="_blank">LegiSocial — PLFSS 2027 : rejet par l'Assemblée nationale</a></li>
+      <li><a href="https://blog.avocats.deloitte.fr/plf-et-plfss-2027-point-detape/" target="_blank">Deloitte Avocats — PLF et PLFSS 2027 : point d'étape</a></li>
+      <li><a href="https://www.legifiscal.fr/actualites-fiscales/4684-plf-2027-commission-finances-rejette-partie-recettes-creuse-deficit-environ-10-md.html" target="_blank">LegiFiscal — PLF 2027 : la commission des finances rejette la partie recettes</a></li>
+      <li><a href="https://cryptoast.fr/pea-le-gouvernement-renonce-a-exclure-les-etf-synthetiques/" target="_blank">Cryptoast — PEA : le gouvernement renonce à exclure les ETF synthétiques</a></li>
+      <li><a href="https://selectra.info/finance/actualites/marche/dette-fiscale-budget-2027-pea-vente-forcee" target="_blank">Selectra — Budget 2027 : dette fiscale et vente forcée du PEA</a></li>
+      <li><a href="https://eco3min.fr/taux-livret-a-date-revision/" target="_blank">Eco3min — Taux du Livret A : date de révision</a></li>
+      <li><a href="https://www.banque-france.fr/system/files/2026-07/CP-Livret-A-LEP-Juillet-2026.pdf" target="_blank">Banque de France — Communiqué de presse Livret A/LEP, juillet 2026</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  Veille générée automatiquement par Claude Code · Radar Q2 2026 · Prochain review trimestriel : première semaine de décembre 2026
+</footer>
+
+</body>
+</html>
